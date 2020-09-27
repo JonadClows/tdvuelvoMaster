@@ -1,0 +1,428 @@
+@font-face {
+    font-family: "Abadi mtstd";
+    src: url("../Fonts/Abadi\ mtstd.otf");
+}
+
+
+/*Cabecera ->*/
+
+.logo {
+    width: auto;
+    height: 70px;
+    z-index: 100;
+    border-bottom-left-radius: 100px 250px;
+    border-top-left-radius: 0px 0px;
+    border-bottom-right-radius: 100px 250px;
+}
+
+.navFont {
+    color: #878787;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Abadi mtstd";
+}
+
+.navFont:hover {
+    color: #004f6e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header {
+    background: #f6f6f6;
+    text-align: center;
+    position: fixed;
+    z-index: 100;
+}
+
+.espacio {
+    padding-top: 70px;
+}
+
+
+/*Cabecera <--*/
+
+
+/*Pie -->*/
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    /* width: 100%; */
+    /* background: red; */
+    /* color: #ed0c0c; */
+    /* text-align: center; 
+    height: 90px;*/
+    background: url(../img/footer.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    z-index: 100;
+}
+
+.sizeFooter {
+    height: 76px;
+}
+
+.letraFooter {
+    font-size: 16px;
+    margin-top: 25px;
+}
+
+
+/*Pie <--*/
+
+
+/*Letras --> */
+
+h1#titlePrin {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 60px;
+    font-family: "Abadi mtstd";
+}
+
+.boldSize {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sizeP {
+    font-size: 21px;
+    font-family: "Abadi mtstd";
+}
+
+a.sizeP {
+    font-size: 15px;
+    text-decoration: revert;
+}
+
+
+/*Letras <-- */
+
+
+/*Ubicaciones --> */
+
+.ubiFont {
+    padding-left: 50px;
+    text-align: justify;
+}
+
+.parte1 {
+    margin-top: 70px;
+    /* margin-left: 190px; */
+    /* margin-right: 0px; */
+    /*margin-bottom: 50px;
+    max-width: 45em; 
+    height: 560px;*/
+    padding-bottom: 70px;
+    padding-top: 30px;
+}
+
+.mainW {
+    background: white;
+    padding-top: 70px;
+    padding-bottom: 75px;
+}
+
+.mainC {
+    background: url(../img/fondoAzul.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+div#contactanos {
+    padding-bottom: 120px;
+    /* margin-top: 13px; */
+    /* margin-bottom: 14px; */
+    padding-top: 92px;
+}
+
+
+/*Ubicaciones <-- */
+
+
+/*Botones -->*/
+
+#btnCrearCuenta {
+    border-radius: 8px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.btnC {
+    color: #004f6e;
+    border: 1px solid rgb(0 79 110);
+}
+
+.btnC:hover {
+    color: #004f6e;
+    text-decoration: none;
+}
+
+a.colorW:hover {
+    color: white;
+}
+
+a.colorC:hover {
+    color: #004f6e;
+}
+
+.btnW {
+    color: white;
+    border: 1px solid white;
+}
+
+.btnW:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*Botones <--*/
+
+#imgEmpresa {
+    background: url(../img/imgEmpresa2.png) no-repeat center;
+    /* -webkit-background-size: cover; */
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /* width: 510px; */
+    /* height: 425px; */
+    /* margin-left: 60px; */
+    /* margin-top: 20px; */
+    background-size: cover;
+    background-position: center;
+    min-height: 401px;
+    min-width: 480px;
+}
+
+#centrar {
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    text-align: left;
+}
+
+[id="centrar"] input[id="txtPart2"] {
+    width: 403px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 30px;
+    border: 2px solid #878787;
+}
+
+[id="centrar"] label {
+    color: #878787;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+[id="centrar"] p {
+    color: #878787;
+}
+
+.simulador {
+    background-color: #ffffff;
+    border-radius: 8px;
+    /*-webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);*/
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30em;
+    padding-bottom: 10px;
+    padding-top: 1px;
+    height: 480px;
+    margin-top: 50px;
+}
+
+#contact {
+    width: 440px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.colorContact {
+    color: #004f6e;
+    font-weight: 500;
+}
+
+.colorC {
+    color: #004f6e;
+    /*font-size: 21px;
+margin-right: 66px;*/
+}
+
+.colorW {
+    color: #ffffff;
+    /*font-size: 21px;
+margin-right: 66px;*/
+}
+
+
+/* Contenedor del login */
+
+#login {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    /*margin-top: 7%;
+     max-width: 20em; */
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 580px;
+    height: 384px;
+}
+
+
+/* Etiquetas del formulario */
+
+label.logon {
+    color: #004f6e;
+    display: block;
+    margin-bottom: 6px;
+    margin-left: 10%;
+    font-size: 22px;
+    margin-top: 22px;
+}
+
+
+/* Campos del formulario */
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #9d9d9c;
+    border-radius: 5px;
+    display: block;
+    font-size: 1em;
+    height: 2em;
+    text-align: center;
+    width: 464;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+}
+
+
+/* Botón */
+
+.fondoAzul {
+    background: url(../img/fondoColor.jpg) no-repeat center;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #A3A0A2;
+    border: none;
+    border-radius: 6px;
+    display: block;
+    font-size: 1em;
+    height: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    text-align: center;
+    width: 464px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #A33D41;
+    opacity: 0.8;
+}
+
+div#login a {
+    text-align: right;
+    font-size: 16px;
+    /* margin-left: auto; */
+    margin-right: 58px;
+    margin-top: 6px;
+}
+
+input[placeholder] {
+    font-size: 17px;
+}
+
+
+/*Crear Cuenta -->*/
+
+#register {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    /* max-width: 20em; */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 580px;
+    height: 515px;
+}
+
+label.register {
+    color: #004f6e;
+    display: block;
+    margin-bottom: 6px;
+    margin-left: 10%;
+    font-size: 22px;
+    /* margin-top: 22px; */
+}
+
+div#register a {
+    font-size: 16px;
+    margin-left: 10%;
+}
+
+div#register input {
+    border: 1px solid #9d9d9c;
+    border-radius: 5px;
+    display: block;
+    /* font-size: 1em; */
+    /* height: 2em; */
+    text-align: center;
+    width: 464px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px;
+    margin-bottom: 1%;
+}
+
+.btnLeft {
+    float: left;
+    width: 125px;
+    text-align: right;
+    /*margin: 2px 10px;*/
+    display: inline;
+}
+
+.btnRight {
+    float: left;
+    text-align: left;
+    /*margin: 2px 10px;*/
+    display: inline;
+}
+
+div#register button {
+    height: 45px;
+    width: 84%;
+    left: 58px;
+}
+
+
+/*Crear Cuenta <--*/
