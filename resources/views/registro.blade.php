@@ -32,18 +32,16 @@
                     <div class="row">
                         <div class="col-md-6 pl-4">
                             <div class="input-group-append">
-                                <select name="ciudad" id="ciudad" class="cbCiudad btn btn-outline-secondary">
-                                    <option value="Ciudad" selected="selected" disabled hidden>Provincia</option>
-                                    <option value="1">Guayas</option>
-                                    <option value="2">Pichincha</option>
-                                    <option value="3">Azuay</option>
+                                <select name="selectProvincia" id="selectProvincia" class="cbCiudad btn btn-outline-secondary">
+                                    <option value="Provincia" selected="selected" disabled hidden>Provincia</option>
+                                    
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6 pl-4" style="right: 65px;">
                             <div class="input-group-append">
                                 <input type="hidden" name="id_ciudad" id="id_ciudad" value="1"/>
-                                <select name="ciudad" id="ciudad" class="cbCiudad btn btn-outline-secondary">
+                                <select name="selectCiudad" id="selectCiudad" class="cbCiudad btn btn-outline-secondary">
                                     <option value="Ciudad" selected="selected" disabled hidden>Ciudad</option>
                                     <option value="1">Guayaquil</option>
                                     <option value="2">Quito</option>

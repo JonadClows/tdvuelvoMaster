@@ -17,7 +17,7 @@
             </div>
             <div class="row pl-5 pt-5 text-center">
                 <div class="col-md-6 ">
-                    <a id="" class="btnCrearCuenta btnC" href="{{ route('registro') }}" onclick="btnCrear()">Crea tu cuenta</a>
+                    <a id="" class="btnCrearCuenta btnC" href="{{ route('provincia') }}" onclick="//llenaDatos()">Crea tu cuenta</a>
                 </div>
                 <div class="col-md-6 text-left">
                     <a class="colorC sizeP" href="#contactanos">Contáctate con nosotros</a>
@@ -48,7 +48,7 @@
             </div>
             <div class="row pl-5 pt-5 text-center">
                 <div class="col-md-6 ">
-                    <a id="" class="btnCrearCuenta btnC" href="{{ route('inicio') }}" onclick="btnCrear()">Comienza aquí</a>
+                    <a id="" class="btnCrearCuenta btnC" href="{{ route('registro') }}" onclick="llenaDatos()">Comienza aquí</a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="row pl-5 pt-5 text-center">
                 <div class="col-md-6 ">
-                    <a id="" class="btnCrearCuenta btnW" href="{{ route('inicio') }}" onclick="btnCrear()">Crea tu cuenta</a>
+                    <a id="" class="btnCrearCuenta btnW" href="{{ route('inicio') }}" onclick="llenaDatos()">Crea tu cuenta</a>
                 </div>
                 <div class="col-md-6 text-left">
                     <a class="colorW sizeP" href="#contactanos">Contáctate con nosotros</a>

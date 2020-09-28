@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Provincia;
+use App\Models\Canton;
 
 class UserController extends Controller
 {
@@ -27,7 +28,14 @@ class UserController extends Controller
         //$users = User::get();
     }
 
-    public function getProvincia(){
-        $users = Provincia::get();
+    public function getDatosGeo(){
+        $provincias = Provincia::get();
+        return $provincias;
+        //return view('registro', ['provincias' => $provincias]);
+    }
+
+    public function getCiudad($id){
+        $cantones = Canton::where('id_provincia','=',$id)->get();
+        return $cantones;
     }
 }

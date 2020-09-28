@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,10 @@ Route::get('/miperfil', function () {
     return view('perfil');
 })->name('perfil');
 
-Route::put('/update/{id}',[App\Http\Controllers\UserController::class, 'updateUser']);
+Route::put('/update/{id}',[UserController::class, 'updateUser']);
+
+Route::get('/registere',[UserController::class, 'getDatosGeo'])->name('provincia');
+
+Route::get('/regis',[UserController::class, 'getCiudad'])->name('ciudad');
+
 //Route::patch('/update',[App\Http\Controllers\UserController::class, 'updateUser'])->name('register.update');

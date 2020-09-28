@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cuenta extends Model
+class Canton extends Model
 {
-    //use HasFactory;
-    protected $table = 'cuenta_bancaria';
+    protected $table = 'ciudad';
     protected $guarded = ["id"];
 }
