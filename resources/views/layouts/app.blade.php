@@ -32,23 +32,20 @@
                     <a class="navFont" href="{{ route('login') }}">Iniciar sesión</a>
                 </div>
                 @else
-                <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center dropdown">
+                    <a class="navFont" href="{{ route('perfil') }}" >Mi perfil</a>
+                    <div class="dropdown-content border">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+                </div>
+                
+                <!--
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>-->
                 @endguest
             </div>
         </div>
@@ -61,10 +58,15 @@
                     <p class="text-center colorW letraFooter">©TDVUELVO. Todos los derechos reservados.</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 ">
-                    <p class="text-center colorW letraFooter">Respaldado por LEXTAX</p>
+                    <p class="text-center colorW letraFooter">Respaldado por LEXTAX, GRUPO LINK Y STUPENDO. </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 ">
-
+                    <div class="socialSimple text-right mr-4 mt-4">
+                        <a class="mr-2" id="" title="LinkedIn" href="" target="_blank"><img src="img/logo_in.png"></a>
+                        <a class="mr-1" id="" title="Connect with us on facebook" href=""><img src="img/logo_facebook.png"></a>
+                        <a class="mr-1" id="" title="Follow us on Twitter" href="" target="_blank"><img src="img/logo_twitter.png"></a>
+                        <a class="mr-1" id="" title="Instagram" href="" target="_blank"><img src="img/logo_insta.png"></a>
+                    </div>
                 </div>
             </div>
             <!--<div class="footerFix">
@@ -80,6 +82,7 @@
             </div>-->
         </div></footer>
 
+    <script src="js/simulador.js"></script>
     <script src="dist/smooth-scroll.polyfills.js"></script>
     <script>
         var scroll = new SmoothScroll('a[href*="#"]');

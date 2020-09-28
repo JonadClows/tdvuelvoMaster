@@ -30,3 +30,10 @@ Route::get('/login', function () {
 Route::get('/registro', function () {
     return view('registro');
 })->name('registro');
+
+Route::get('/miperfil', function () {
+    return view('perfil');
+})->name('perfil');
+
+Route::put('/update/{id}',[App\Http\Controllers\UserController::class, 'updateUser']);
+//Route::patch('/update',[App\Http\Controllers\UserController::class, 'updateUser'])->name('register.update');

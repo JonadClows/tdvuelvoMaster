@@ -3,6 +3,11 @@
     src: url("../Fonts/Abadi\ mtstd.otf");
 }
 
+@font-face {
+    font-family: "Abadi bold";
+    src: url("../Fonts/Abadi\ mtstd-bold-opentype.otf");
+}
+
 
 /*Cabecera ->*/
 
@@ -37,6 +42,15 @@
 
 .espacio {
     padding-top: 70px;
+}
+
+div.dropdown div.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
 }
 
 
@@ -105,7 +119,7 @@ a.sizeP {
 /*Ubicaciones --> */
 
 .ubiFont {
-    padding-left: 50px;
+    padding-left: 30px;
     text-align: justify;
 }
 
@@ -146,7 +160,7 @@ div#contactanos {
 
 /*Botones -->*/
 
-#btnCrearCuenta {
+.btnCrearCuenta {
     border-radius: 8px;
     padding-right: 30px;
     padding-bottom: 20px;
@@ -210,7 +224,7 @@ a.colorC:hover {
     text-align: left;
 }
 
-[id="centrar"] input[id="txtPart2"] {
+[id="centrar"] input[class="txtPart2"] {
     width: 403px;
     height: 60px;
     border-radius: 5px;
@@ -305,10 +319,7 @@ input[type="password"] {
     border: 1px solid #9d9d9c;
     border-radius: 5px;
     display: block;
-    font-size: 1em;
-    height: 2em;
     text-align: center;
-    width: 464;
     margin-left: auto;
     margin-right: auto;
     height: 60px;
@@ -382,6 +393,7 @@ label.register {
     margin-left: 10%;
     font-size: 22px;
     /* margin-top: 22px; */
+    font-family: "Abadi bold";
 }
 
 div#register a {
@@ -418,11 +430,94 @@ div#register input {
     display: inline;
 }
 
-div#register button {
+div#register select.cbCiudad {
     height: 45px;
     width: 84%;
-    left: 58px;
+    left: 50px;
 }
 
 
 /*Crear Cuenta <--*/
+
+
+/*Perfil -->*/
+
+.sombra {
+    background-color: white;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75); 
+    -moz-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 4px 4px 6px 2px rgba(238, 238, 238, 1);*/
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(228, 228, 228, 1);
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* margin-top: 5%; */
+    /* max-width: 20em; */
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.fondoTd {
+    background: url(../img/fondoLog.png) no-repeat left;
+    /* padding-bottom: 5em; */
+    position: fixed;
+    margin-top: 70px;
+    width: 750px;
+    height: 695px;
+}
+
+.fondoBtn {
+    background: url(../img/fondoAzul.jpg) no-repeat center;
+    background-color: unset;
+    color: white;
+}
+
+.fondoBtn:hover,
+.fondoBtn:not(:hover) {
+    background: url(../img/fondoAzul.jpg) no-repeat center;
+    background-color: unset;
+    color: white;
+}
+
+.btnMP {
+    border-radius: 5px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.infoMP {
+    color: #878787;
+    font-size: 14px;
+    /* font-family: "Abadi mtstd"; */
+}
+
+.fontMP {
+    font-family: "Abadi bold";
+    /*font-weight: bold;*/
+}
+
+.divMP {
+    border-radius: 5px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.numMP {
+    font-size: 60px;
+    font-family: "Abadi bold";
+}
+
+h5.fontMP {
+    padding-top: 9px;
+}
+
+
+/*Perfil -->*/
+
+div.socialSimple img {
+    visibility: hidden;
+}

@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div id="empresa" class="row mainW">
         <div class="col-lg-6 col-md-6 col-sm-12 parte1 ">
-            <div class="row pl-5 pt-5" id="">
+            <div class="row pl-5" id="">
                 <div class="col-md-8 ">
                     <h1 class="colorC ubiFont" id="titlePrin">FINANZAS DIGITALES</h1>
                 </div>
@@ -17,7 +17,7 @@
             </div>
             <div class="row pl-5 pt-5 text-center">
                 <div class="col-md-6 ">
-                    <a id="btnCrearCuenta" class="btnC" href="{{ route('registro') }}" onclick="btnCrear()">Crea tu cuenta</a>
+                    <a id="" class="btnCrearCuenta btnC" href="{{ route('registro') }}" onclick="btnCrear()">Crea tu cuenta</a>
                 </div>
                 <div class="col-md-6 text-left">
                     <a class="colorC sizeP" href="#contactanos">Contáctate con nosotros</a>
@@ -48,7 +48,7 @@
             </div>
             <div class="row pl-5 pt-5 text-center">
                 <div class="col-md-6 ">
-                    <a id="btnCrearCuenta" class="btnC" href="{{ route('inicio') }}" onclick="btnCrear()">Comienza aquí</a>
+                    <a id="" class="btnCrearCuenta btnC" href="{{ route('inicio') }}" onclick="btnCrear()">Comienza aquí</a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="row pl-5 pt-5 text-center">
                 <div class="col-md-6 ">
-                    <a id="btnCrearCuenta" class="btnW" href="{{ route('inicio') }}" onclick="btnCrear()">Crea tu cuenta</a>
+                    <a id="" class="btnCrearCuenta btnW" href="{{ route('inicio') }}" onclick="btnCrear()">Crea tu cuenta</a>
                 </div>
                 <div class="col-md-6 text-left">
                     <a class="colorW sizeP" href="#contactanos">Contáctate con nosotros</a>
@@ -89,11 +89,11 @@
                         <br />Ingresa el valor de tu nota para disponibilizar el porcentaje que aplica y el valor correspodiente.
                     </p>
                     <label>MONTO DE NOTA</label>
-                    <input type="text" name="txtMontoNota" id="txtPart2" />
+                    <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2" />
                     <label>COMISIÓN</label>
-                    <input type="text" name="txtComision" id="txtPart2" readonly />
+                    <input type="text" name="txtComision" id="txtComision" class="txtPart2" readonly/>
                     <label>TOTAL A RECIBIR</label>
-                    <input type="text" name="txtTotalRecibir" id="txtPart2" readonly /><br /><br />
+                    <input type="text" name="txtTotalRecibir" id="txtTotalRecibir" class="txtPart2" readonly /><br /><br />
                     <input type="hidden" value="Enviar" />
                 </div>
             </div>
