@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Canton extends Model
 {
-    protected $table = 'ciudad';
-    protected $guarded = ["id"];
+    protected $table = 'cantones';
+    protected $guarded = ["id_canton"];
 }

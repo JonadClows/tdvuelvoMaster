@@ -37,17 +37,18 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+/*
 Route::get('/registro', function () {
     return view('registro');
-})->name('registro');
+})->name('registro');*/
 
 Route::get('/registroCuenta', function () {
     return view('registroCuenta');
 })->name('registroCuenta');
 
 
-Route::get('/registere',[UserController::class, 'getDatosGeo'])->name('provincia');
+Route::get('/registro',[UserController::class, 'getDatosGeo'])->name('registro');
 
-Route::get('/ciudad',[UserController::class, 'getCiudad'])->name('ciudad');
+Route::get('/canton/{id}',[UserController::class, 'getCanton']);
 
 //Route::patch('/update',[App\Http\Controllers\UserController::class, 'updateUser'])->name('register.update');

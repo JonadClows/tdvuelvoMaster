@@ -24,10 +24,10 @@
             @endguest
                 @csrf 
                     @guest
-                    <input type="text" name="name" placeholder="Nombre y Apellido" />
-                    <input type="text" name="cedula" placeholder="C.I./ Ruc" />
+                    <input type="text" name="name" placeholder="Nombre y Apellido" onKeyPress="return soloLetras(event)"/>
+                    <input type="text" name="cedula" placeholder="C.I./ Ruc" maxlength="10" onKeyPress="return soloNumeros(event)"/>
                     <input type="email" name="email" placeholder="Correo electrónico" />
-                    <input type="text" name="telefono" placeholder="Número telefónico (Opcional)"/>
+                    <input type="text" name="telefono" placeholder="Número telefónico (Opcional)" maxlength="10" onKeyPress="return soloNumeros(event)"/>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" required autocomplete="new-password">
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -50,12 +50,10 @@
                         </div>
                         <div class="col-md-6 pl-4" style="right: 65px;">
                             <div class="input-group-append">
-                                <input type="hidden" name="id_ciudad" id="id_ciudad" value="1"/>
-                                <select name="selectCiudad" id="selectCiudad" class="cbCiudad btn btn-outline-secondary">
-                                    <option value="Ciudad" selected="selected" disabled hidden>Ciudad</option>
-                                    <option value="1">Guayaquil</option>
-                                    <option value="2">Quito</option>
-                                    <option value="3">Cuenca</option>
+                                <input type="hidden" name="id_ciudad" id="id_ciudad" value=""/>
+                                <select name="selectCanton" id="selectCanton" class="cbCiudad btn btn-outline-secondary">
+                                    <option value="Ciudad" selected="selected" disabled hidden>Cantón</option>
+                                    <option value="Sele">Seleccione una provincia</option>
                                 </select>
                             </div>
                         </div>
@@ -72,12 +70,12 @@
                     <div class="row">
                         <div class="col-md-6 pl-4" style="left: 28px;">
                             <div class="input-group-append">
-                                <input class="fondoAzul" type="submit" value="Enviar" />
+                                <input class="fondoAzul" type="submit" onclick="valCedula()" value="Enviar" />
                             </div>
                         </div>
                         <div class="col-md-6 pl-4" style="right: 42px;bottom: 10px;">
                             <div class="input-group-append">
-                                <a id="" class="btnIni btnG" href="{{ route('login') }}" onclick="">Si eres usuario, Inicia sesión</a>
+                                <a id="" class="btnIni btnG" href="{{ route('login') }}" >Si eres usuario, Inicia sesión</a>
                             </div>
                         </div>
                     </div>

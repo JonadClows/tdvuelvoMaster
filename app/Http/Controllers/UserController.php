@@ -34,8 +34,9 @@ class UserController extends Controller
         return view('registro', ['provincias' => $provincias]);
     }
 
-    public function getCiudad($id){
+    public function getCanton($id){
         $cantones = Canton::where('id_provincia','=',$id)->get();
+        //$cantones = Canton::get();
         return $cantones;
     }
 }
