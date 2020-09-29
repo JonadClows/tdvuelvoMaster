@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCuentaBancariaTable extends Migration
+class CreateBancosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateCuentaBancariaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuenta_bancaria', function (Blueprint $table) {
+        Schema::create('bancos', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateCuentaBancariaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cuenta_bancaria');
+        Schema::dropIfExists('bancos');
     }
 }

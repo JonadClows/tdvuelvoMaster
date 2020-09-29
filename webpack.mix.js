@@ -17,15 +17,19 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 */
-mix.scripts([
-    'resources/js/smooth-scroll.min.js',
-    'resources/js/smooth-scroll.polyfills.min.js',
-    'resources/js/main.js',
-    'resources/js/app.js',
-], 'public/js/app.js').styles([
-    'resources/css/app.css',
-    'resources/css/estilos.css',
-], 'public/css/app.css');
+mix
+    .scripts([
+        'resources/js/smooth-scroll.min.js',
+        'resources/js/smooth-scroll.polyfills.min.js',
+        'resources/js/main.js',
+        'resources/js/dev2.js',
+        // 'resources/js/app.js',
+    ], 'public/js/app.js')
+    .sass('resources/sass/estilos2.scss',  'public/css/estilos2.css')
+    .styles([
+        'resources/css/app.css',
+        'resources/css/estilos.css',
+    ], 'public/css/app.css');
 /*
 mix.styles([
     'resources/css/app.css',

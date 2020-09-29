@@ -13,26 +13,35 @@
     </div>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 align-self-center">
-            <div id="register">
-                <form action="{{}}" method="POST">
-                <div class="input-group-append">
-                                <input type="hidden" name="id_ciudad" id="id_ciudad" value="1"/>
-                                <select name="selectBanco" id="selectBanco" class=" btn btn-outline-secondary">
-                                    <option value="Banco" selected="selected" disabled hidden>Banco</option>
-                                </select>
-                            </div>
-                            <div class="input-group-append">
-                                <input type="hidden" name="id_ciudad" id="id_ciudad" value="1"/>
-                                <select name="selectBanco" id="selectBanco" class=" btn btn-outline-secondary">
-                                    <option value="Banco" selected="selected" disabled hidden>Tipo cuenta</option>
-                                </select>
-                            </div>
+            <div id="register" class="accountRegister">
+                <form action="" method="POST">
+                    @csrf
+                    <div class="input-group-append">
+                        <select name="banco" id="banco" class=" btn btn-outline-secondary">
+                            <option>Banco</option>
+                            @foreach ($bancos as $banco)
+                                <option value="{{$banco->id}}" {{ ( old("banco") == $banco->id ? "selected" : "" ) }}>
+                                    {{$banco->name}}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="input-group-append">
+                        <select name="tipoCta" id="tipoCta" class=" btn btn-outline-secondary">
+                            <option>Tipo cuenta</option>
+                            @foreach ($tiposCta as $tipoCta)
+                                <option value="{{$tipoCta->id}}" {{ ( old("tipoCta") == $tipoCta->id ? "selected" : "" ) }}>
+                                    {{$tipoCta->name}}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     <input type="text" name="cedula" placeholder="C.I./ Ruc" />
-                    <input type="email" name="email" placeholder="Numero de cuenta" />
-                    <input type="text" name="name" placeholder="Nombre y Apellido"/>
+                    <input type="text" name="nroCta" placeholder="Numero de cuenta" />
+                    <input type="text" name="nombreCompleto" placeholder="Nombre y Apellido"/>
                     
-                    <div class="row">
-                        <div class="col-md-6 pl-4" style="">
+                    <div class="row mt-5">
+                        <div class="col">
                             <div class="input-group-append">
                                 <input class="fondoAzul" type="submit" value="Confirmar" />
                             </div>

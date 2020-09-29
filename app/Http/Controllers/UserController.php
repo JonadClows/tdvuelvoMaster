@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Provincia;
 use App\Models\Canton;
+use App\Models\Cuenta;
 
 class UserController extends Controller
 {
@@ -37,5 +38,11 @@ class UserController extends Controller
     public function getCiudad($id){
         $cantones = Canton::where('id_provincia','=',$id)->get();
         return $cantones;
+    }
+
+    public function profile() {
+        $user = \Auth::user()->id;
+        $cuentas = Cuenta::where('user_id','=',$user)->get();
+        return view('perfil', ['cuentas' => $cuentas]);
     }
 }

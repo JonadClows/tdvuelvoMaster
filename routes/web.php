@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CuentaBancariaController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\NotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +20,7 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function (){
     // AQUI VAN LAS RUTAS
-    Route::get('/miperfil', function () {
-        return view('perfil');
-    })->name('perfil');
+    Route::get('/miperfil', [UserController::class, 'profile'])->name('perfil');
 
     Route::put('/update/{id}',[UserController::class, 'updateUser']);
 });
@@ -41,10 +42,12 @@ Route::get('/registro', function () {
     return view('registro');
 })->name('registro');
 
-Route::get('/registroCuenta', function () {
-    return view('registroCuenta');
-})->name('registroCuenta');
+Route::get('/registrar-cuenta', [CuentaBancariaController::class, 'formRegistro'])->name('registrarCuenta');
+Route::post('/registrar-cuenta', [CuentaBancariaController::class, 'saveRegistro'])->name('guardarCuenta');
 
+Route::get('/vender-nota', [NotaController::class, 'venderNota'])->name('venderNota');
+
+Route::post('/contacto', [MailController::class, 'contactMail'])->name('contacto');
 
 Route::get('/registere',[UserController::class, 'getDatosGeo'])->name('provincia');
 

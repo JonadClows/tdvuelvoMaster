@@ -67,8 +67,8 @@
                             <div class="col-lg-7 col-md-7 col-sm-7 mt-2 colorC">
                                 <h5 class="fontMP">CUENTA BANCARIA</h5>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5 text-center ">
-                            <a type="button" class="btnMP btnC" href="{{ route('registroCuenta') }}">Registrar</a>
+                            <div class="col-lg-5 col-md-5 col-sm-5 text-center d-flex align-items-start justify-content-center">
+                                <a type="button" class="btnMP btnC" href="{{ route('registrarCuenta') }}">Registrar</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,16 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 mt-4 mb-3">
-                                <button class="fondoBtn btn btn-outline-secondary btn-block ">Vender Nota</button>
+                                <button
+                                    id="btnSellNote"
+                                    class="fondoBtn btn btn-outline-secondary btn-block {{ (sizeof($cuentas)==0 ? 'disabled' : '') }}"
+                                    data-url="{{ url('vender-nota') }}"
+                                >
+                                    Vender Nota
+                                </button>
+                                @if (sizeof($cuentas)==0)
+                                    <p class="text-center">No tiene cuentas registradas</p>
+                                @endif
                             </div>
                         </div>
                     </div>
