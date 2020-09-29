@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BancoSeeder::class,
             TipoCuentaSeeder::class,
+            ProvinciaSeeder::class,
+            CantonSeeder::class,
         ]);
     }
 }

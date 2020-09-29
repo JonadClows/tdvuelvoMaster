@@ -38,9 +38,10 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+/*
 Route::get('/registro', function () {
     return view('registro');
-})->name('registro');
+})->name('registro');*/
 
 Route::get('/registrar-cuenta', [CuentaBancariaController::class, 'formRegistro'])->name('registrarCuenta');
 Route::post('/registrar-cuenta', [CuentaBancariaController::class, 'saveRegistro'])->name('guardarCuenta');
@@ -49,8 +50,8 @@ Route::get('/vender-nota', [NotaController::class, 'venderNota'])->name('venderN
 
 Route::post('/contacto', [MailController::class, 'contactMail'])->name('contacto');
 
-Route::get('/registere',[UserController::class, 'getDatosGeo'])->name('provincia');
+Route::get('/registro',[UserController::class, 'getDatosGeo'])->name('registro');
 
-Route::get('/ciudad',[UserController::class, 'getCiudad'])->name('ciudad');
+Route::get('/canton/{id}',[UserController::class, 'getCanton']);
 
 //Route::patch('/update',[App\Http\Controllers\UserController::class, 'updateUser'])->name('register.update');
