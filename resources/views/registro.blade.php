@@ -24,7 +24,7 @@
             @endguest
                 @csrf 
                     @guest
-                    <input type="text" name="name" placeholder="Nombre y Apellido" onKeyPress="return soloLetras(event)"/>
+                    <input type="text" name="name" placeholder="Nombre y Apellido"/>
                     <input type="text" name="cedula" placeholder="C.I./ Ruc" maxlength="10" onKeyPress="return soloNumeros(event)"/>
                     <input type="email" name="email" placeholder="Correo electrónico" />
                     <input type="text" name="telefono" placeholder="Número telefónico (Opcional)" maxlength="10" onKeyPress="return soloNumeros(event)"/>
