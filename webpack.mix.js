@@ -9,7 +9,25 @@ const mix = require('laravel-mix');
  | for your Laravel application. By default, we are compiling the Sass
  | file for the application as well as bundling up all the JS files.
  |
- */
+ 'resources/assets/js/smooth-scroll.js',
+    'resources/assets/js/smooth-scroll.min.js',
+    'resources/assets/js/smooth-scroll.polyfills.js',
+    'resources/assets/js/smooth-scroll.polyfills.min.js',
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+*/
+mix.scripts([
+    'resources/js/smooth-scroll.min.js',
+    'resources/js/smooth-scroll.polyfills.min.js',
+    'resources/js/main.js',
+    'resources/js/app.js',
+], 'public/js/app.js').styles([
+    'resources/css/app.css',
+    'resources/css/estilos.css',
+], 'public/css/app.css');
+/*
+mix.styles([
+    'resources/css/app.css',
+    'resources/css/estilos.css'
+], 'public/css/all.css');*/

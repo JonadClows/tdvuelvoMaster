@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <link rel="stylesheet" href="css/estilos.css" />
-    <script src="js/main.js"></script>
+    <!--<link href="{{ asset('css/all.css') }}" rel="stylesheet">-->
+    <link href="css/estilos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -69,21 +70,10 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="footerFix">
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p class="colorW">©TDVUELVO. Todos los derechos reservados.</p>
-                        </div>
-                        <div class="col-md-3">Respaldado por LEXTAX</div>
-                        <div class="col-md-3">redes</div>
-                    </div>
-                </div>
-            </div>-->
         </div></footer>
 
-    <script src="js/simulador.js"></script>
-    <script src="dist/smooth-scroll.polyfills.js"></script>
+    <script src="js/main2.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script>
         var scroll = new SmoothScroll('a[href*="#"]');
     </script>

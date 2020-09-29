@@ -30,8 +30,8 @@ class UserController extends Controller
 
     public function getDatosGeo(){
         $provincias = Provincia::get();
-        return $provincias;
-        //return view('registro', ['provincias' => $provincias]);
+        //return $provincias;
+        return view('registro', ['provincias' => $provincias]);
     }
 
     public function getCiudad($id){

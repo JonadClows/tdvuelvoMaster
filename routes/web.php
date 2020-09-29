@@ -15,6 +15,15 @@ use App\Http\Controllers\UserController;
 */
 Auth::routes();
 
+Route::middleware(['auth'])->group(function (){
+    // AQUI VAN LAS RUTAS
+    Route::get('/miperfil', function () {
+        return view('perfil');
+    })->name('perfil');
+
+    Route::put('/update/{id}',[UserController::class, 'updateUser']);
+});
+
 Route::get('/', function () {
     return view('home');
 });
@@ -32,14 +41,13 @@ Route::get('/registro', function () {
     return view('registro');
 })->name('registro');
 
-Route::get('/miperfil', function () {
-    return view('perfil');
-})->name('perfil');
+Route::get('/registroCuenta', function () {
+    return view('registroCuenta');
+})->name('registroCuenta');
 
-Route::put('/update/{id}',[UserController::class, 'updateUser']);
 
 Route::get('/registere',[UserController::class, 'getDatosGeo'])->name('provincia');
 
-Route::get('/regis',[UserController::class, 'getCiudad'])->name('ciudad');
+Route::get('/ciudad',[UserController::class, 'getCiudad'])->name('ciudad');
 
 //Route::patch('/update',[App\Http\Controllers\UserController::class, 'updateUser'])->name('register.update');

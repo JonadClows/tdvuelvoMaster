@@ -68,7 +68,7 @@
                                 <h5 class="fontMP">CUENTA BANCARIA</h5>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-5 text-center ">
-                                <a type="button" class="btnMP btnC">Registrar</a>
+                            <a type="button" class="btnMP btnC" href="{{ route('registroCuenta') }}">Registrar</a>
                             </div>
                         </div>
                     </div>

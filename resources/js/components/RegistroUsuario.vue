@@ -1,6 +1,5 @@
-@extends('layouts.app')
-@section('seccionPrincipal')
-<div id="registro" class="container-fluid espacio" style="display: block;">
+<template>
+    <div >
     <div class="row pt-5">
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <label class="register">INGRESA TUS DATOS</label>
@@ -13,17 +12,8 @@
     </div>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 align-self-center">
-            @guest
             <div id="register">
                 <form action="{{ route('register') }}" method="POST">
-            @else
-            <div id="register" style="height: 400px; padding-top: 20px;">
-                <form action="/update/{{Auth::user()->id}}" method="POST">
-                    @method('PUT')
-                    <label class="register">ACTUALIZA TUS DATOS</label>
-            @endguest
-                @csrf 
-                    @guest
                     <input type="text" name="name" placeholder="Nombre y Apellido" />
                     <input type="text" name="cedula" placeholder="C.I./ Ruc" />
                     <input type="email" name="email" placeholder="Correo electrónico" />
@@ -39,12 +29,9 @@
                     <div class="row">
                         <div class="col-md-6 pl-4">
                             <div class="input-group-append">
-                                <input type="hidden" name="id_provincia" id="id_provincia" value="1"/>
                                 <select name="selectProvincia" id="selectProvincia" class="cbCiudad btn btn-outline-secondary">
                                     <option value="Provincia" selected="selected" disabled hidden>Provincia</option>
-                                    @foreach($provincias as $p)
-                                    <option value="{{ $p['id_provincia'] }}">{{ $p['name'] }}</option>
-                                    @endforeach
+                                    
                                 </select>
                             </div>
                         </div>
@@ -61,14 +48,6 @@
                         </div>
                     </div>
                     <br>
-                    @else
-                    <input type="text" name="name" placeholder="Nombre y Apellido" value="{{ Auth::user()->name }}"/>
-                    <input type="text" name="cedula" placeholder="C.I./ Ruc" value="{{ Auth::user()->cedula }}"/>
-                    <input type="email" name="email" placeholder="Correo electrónico" value="{{ Auth::user()->email }}"/>
-                    <input type="text" name="telefono" placeholder="Número telefónico (Opcional)" value="{{ Auth::user()->telefono }}"/>
-                    @endguest
-
-                    @guest
                     <div class="row">
                         <div class="col-md-6 pl-4" style="left: 28px;">
                             <div class="input-group-append">
@@ -81,13 +60,45 @@
                             </div>
                         </div>
                     </div>
-                        
-                    @else
-                        <input class="fondoAzul mt-4" type="submit" value="Actualizar" />
-                    @endguest
                 </form>
             </div>
         </div>
     </div>
 </div>
-@endsection
+</template>
+
+<script>
+    import axios from "axios";
+    export default {
+        mounted() {
+            this.presentacion();
+        },
+        data(){
+            return {
+                provincia: [],
+                datos: '',
+                selccionpro: ''
+            }
+        },
+        methods: {
+            presentacion(){
+                axios.get('/getGeo').then(resp => {
+                    this.datos = resp.data.provincia;
+                }).catch(e => {
+                    console.log(e)
+                });
+            },
+            submit() {
+                axios.get('/inicio').then(resonse => {
+                    window.location="/inicio"
+                    console.log(resonse)
+                }).catch(e=> {
+                  console.log(e)
+                })
+            },
+            cambiar(){
+                axios.get('/getCantones/'+this.selccionpro)
+            }
+        }
+    }
+</script>
