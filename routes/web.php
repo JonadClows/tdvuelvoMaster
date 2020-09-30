@@ -20,9 +20,7 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function (){
     // AQUI VAN LAS RUTAS
-    Route::get('/miperfil', function () {
-        return view('perfil');
-    })->name('perfil');
+    Route::get('/miperfil', [UserController::class, 'profile'])->name('perfil');
 
     Route::put('/update/{id}',[UserController::class, 'updateUser']);
 });
