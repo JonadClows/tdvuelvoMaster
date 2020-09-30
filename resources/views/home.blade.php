@@ -164,12 +164,15 @@
                 </div>
             </div>
             <div class="row justify-content-md-center">
-                <div id="contact" class=" input-group mb-3 ">
-                    <input type="text" class="form-control" placeholder="Correo electrónico" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append fondoAzul">
-                        <button class="btn btn-outline-secondary" type="button" style="color: white;">Enviar</button>
+                <form action="/contacto" method="POST">
+                    <div id="contact" class=" input-group mb-3 ">
+                        @csrf
+                        <input type="text" name="contactEmail" id="contactEmail" class="form-control" placeholder="Correo electrónico" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append fondoAzul">
+                            <button class="btn btn-outline-secondary" type="submit" style="color: white;">Enviar</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

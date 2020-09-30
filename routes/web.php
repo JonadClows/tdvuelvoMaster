@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CuentaBancariaController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\NotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,14 +45,12 @@ Route::get('/registro', function () {
     return view('registro');
 })->name('registro');*/
 
-Route::get('/registroCuenta', function () {
-    return view('registroCuenta');
-})->name('registroCuenta');
+Route::get('/registrar-cuenta', [CuentaBancariaController::class, 'formRegistro'])->name('registrarCuenta');
+Route::post('/registrar-cuenta', [CuentaBancariaController::class, 'saveRegistro'])->name('guardarCuenta');
 
-Route::get('/venderNota', function () {
-    return view('venderNota');
-})->name('venderNota');
+Route::get('/vender-nota', [NotaController::class, 'venderNota'])->name('venderNota');
 
+Route::post('/contacto', [MailController::class, 'contactMail'])->name('contacto');
 
 Route::get('/registro',[UserController::class, 'getDatosGeo'])->name('registro');
 
