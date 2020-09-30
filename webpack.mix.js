@@ -25,7 +25,7 @@ mix.scripts([
 ], 'public/js/app.js').styles([
     'resources/css/app.css',
     'resources/css/estilos.css',
-], 'public/css/app.css');
+], 'public/css/all.css');
 /*
 mix.styles([
     'resources/css/app.css',

@@ -16,8 +16,8 @@
             <div id="login">
                 <form method="POST" action="{{ route('login') }}" class="pt-5">
                     @csrf
-                    <input type="text" name="email" placeholder="C.I./ RUC" /><br>
-                    <input type="password" name="password" placeholder="Contraseña" />
+                    <input type="text" name="email" placeholder="Email" required/><br>
+                    <input type="password" name="password" placeholder="Contraseña" required/>
                     <div class="text-right"><a>* Olvide mi contraseña</a></div><br><br>
                     <input class="fondoAzul" type="submit" value="Enviar" />
                 </form>

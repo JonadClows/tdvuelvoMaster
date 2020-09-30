@@ -46,6 +46,10 @@ Route::get('/registroCuenta', function () {
     return view('registroCuenta');
 })->name('registroCuenta');
 
+Route::get('/venderNota', function () {
+    return view('venderNota');
+})->name('venderNota');
+
 
 Route::get('/registro',[UserController::class, 'getDatosGeo'])->name('registro');
 

@@ -16,6 +16,7 @@
     <header class="">
         <div class="container-fluid header">
             <div class="row">
+                @guest
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
                     <a class="navFont" href="{{ route('inicio') }}#empresa">Empresa</a>
                 </div>
@@ -28,11 +29,23 @@
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
                     <a class="navFont" href="{{ route('inicio') }}#venderNota">Vender nota</a>
                 </div>
-                @guest
+                
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
                     <a class="navFont" href="{{ route('login') }}">Iniciar sesión</a>
                 </div>
                 @else
+                <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
+                    <p class="navFont">Empresa</p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
+                    <p class="navFont">Instrucciones</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 logo" style="bottom: 14px;">
+                    <img class="img-fluid" src="img/logoP6.png" />
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
+                    <a class="navFont" href="{{ route('venderNota') }}">Vender nota</a>
+                </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center dropdown">
                     <a class="navFont" href="{{ route('perfil') }}" >Mi perfil</a>
                     <div class="dropdown-content border">

@@ -52,8 +52,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 pt-4 pl-4 parte1  text-center">
-            <img class="img-fluid" style="margin-top: 35px;" width="610" src="img/videoVenderNota.jpg" />
+        <div class="col-lg-6 col-md-6 col-sm-12 pl-0 parte1  text-center">
+            <!--<iframe width="682" height="405" src="img/videoVenderNota.mp4" style="padding-bottom: 21px;" frameborder="0" allowfullscreen autoplay></iframe>-->
+            <iframe width="489" height="300" src="img/videoVenderNota.mp4" style="padding-bottom: 25px; margin-top: 70px;" frameborder="0" allowfullscreen autoplay></iframe>
+            <!--<img class="img-fluid" style="margin-top: 35px;" width="610" src="img/videoVenderNota.jpg" />-->
         </div>
     </div>
     <div id="venderNota" class="row mainC">
@@ -90,7 +92,7 @@
                     </p>
                     <label>MONTO DE NOTA</label>
                     <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2" />
-                    <label>COMISIÓN</label>
+                    <label>DESCUENTO %</label>
                     <input type="text" name="txtComision" id="txtComision" class="txtPart2" readonly/>
                     <label>TOTAL A RECIBIR</label>
                     <input type="text" name="txtTotalRecibir" id="txtTotalRecibir" class="txtPart2" readonly /><br /><br />
@@ -101,7 +103,7 @@
     </div>
     <div id="contactanos" class="row text-center colorContact">
         <div class="col-md-12">
-            <h1>Sigue estos cuatro pasos</h1>
+            <h1>Sigue estos tres pasos</h1>
             <!--<img src="vender2.svg" />-->
         </div>
         <div class="col-md-12">
@@ -112,8 +114,8 @@
             <div class="row justify-content-md-center">
                 <div class="col col-lg-3">
                     <div class="media">
-                        <div class="col col-lg-12">
-                            <img class="mr-3 img-responsive" src="img/paso1.png" />
+                        <div class="col col-lg-12 pl-4">
+                            <img class="pl-2 img-responsive" src="img/paso1.png" />
                         </div>
                     </div>
                     <div class="row">
@@ -122,8 +124,8 @@
                 </div>
                 <div class="col col-lg-3">
                     <div class="media">
-                        <div class="col col-lg-12 align-self-center">
-                            <img class="mr-3 img-responsive" src="img/paso2.png" />
+                        <div class="col col-lg-12 pl-4">
+                            <img class="pl-2 img-responsive" src="img/paso2.png" />
                         </div>
                     </div>
                     <div class="row">
@@ -132,22 +134,22 @@
                 </div>
                 <div class="col col-lg-3">
                     <div class="media">
-                        <div class="col col-lg-2 align-self-center">
-                            <img class="mr-3 img-responsive" src="img/paso3.png" />
+                        <div class="col col-lg-12 pl-4">
+                            <img class="pl-2 img-responsive" src="img/paso3.png" />
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col col-lg-12 text-center">3. FIRMA CONTRATO</div>
+                        <div class="col col-lg-12 text-center pl-5 pr-5">3. FIRMA CONTRATO Y ENDOSA TU NOTA</div>
                     </div>
                 </div>
                 <div class="col col-lg-3">
                     <div class="media">
-                        <div class="col col-lg-2 align-self-center">
-                            <img class="mr-3 img-responsive" src="img/paso4.png" />
+                        <div class="col col-lg-12 pl-4">
+                            <img class="pl-2 img-responsive" src="img/paso4.png" />
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col col-lg-12 text-center">4. ENDOSA Y RECIBE TU DINERO</div>
+                        <div class="col col-lg-12 text-center">RECIBE TU DINERO</div>
                     </div>
                 </div>
             </div>

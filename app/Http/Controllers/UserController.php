@@ -20,7 +20,7 @@ class UserController extends Controller
             'telefono'             => request()->get('telefono'),
         ])->save();
 
-        return redirect('home');
+        return redirect('miperfil');
     }
 
     public function getUsers(){
