@@ -33,8 +33,22 @@ class UserController extends Controller
 
     public function getDatosGeo(){
         $provincias = Provincia::get();
+        $cantones = null;
+        $provincia = null;
+        $canton = null;
+        $user = \Auth::user();
+        if ($user) {
+            $canton = Canton::where('id_canton', '=', $user->id_ciudad)->first();
+            $provincia = Provincia::where('id_provincia', '=', $canton->id_provincia)->first();
+            $cantones = Canton::where('id_provincia', '=', $provincia->id_provincia)->get();
+        }
         //return $provincias;
-        return view('registro', ['provincias' => $provincias]);
+        return view('registro', [
+            'provincias' => $provincias, 
+            'cantones' => $cantones,
+            'provincia' => $provincia,
+            'canton' => $canton,
+        ]);
     }
 
     public function getCanton($id){

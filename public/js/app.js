@@ -202,6 +202,7 @@ $('#frmRegistroCuenta').on('submit', function(event){
 
     // Empaquetar los datos
     const data = {
+        id: $('#id').val(),
         banco: $('#banco').val(),
         tipoCta: $('#tipoCta').val(),
         identificacion: $('#identificacion').val().trim(),
@@ -215,6 +216,65 @@ $('#frmRegistroCuenta').on('submit', function(event){
         '/registrar-cuenta',
         Object.values(data).some((value) => value==''),
         function() { location.href = '/miperfil'; }
+    );
+});
+
+$('#frmRegistroUsuario').on('submit', function(event) {
+    event.preventDefault();
+    const form = $(this);
+
+    // Empaquetar los datos
+    const data = {
+        'cedula': $('#cedula').val().trim(),
+        'name': $('#name').val().trim(),
+        'telefono': $('#telefono').val().trim(),
+        'id_ciudad': $('#id_ciudad').val().trim(),
+        'email': $('#email').val().trim(),
+        'password': $('#password').val().trim(),
+        'password_confirmation': $('#password-confirm').val().trim(),
+    }
+
+    validateAndSend(
+        form,
+        data,
+        form.attr('action'),
+        (
+            data.cedula == ''
+            || data.name == ''
+            || data.id_ciudad == ''
+            || data.email == ''
+            || data.password == ''
+            || data.password_confirmation == ''
+        ),
+        function() { location.href = '/informacion-perfil'; }
+    );
+});
+
+$('#frmEditarUsuario').on('submit', function(event) {
+    event.preventDefault();
+    const form = $(this);
+
+    // Empaquetar los datos
+    const data = {
+        '_method': 'PUT',
+        'cedula': $('#cedula').val().trim(),
+        'name': $('#name').val().trim(),
+        'telefono': $('#telefono').val().trim(),
+        'id_ciudad': $('#id_ciudad').val().trim(),
+        'email': $('#email').val().trim(),
+    }
+
+    validateAndSend(
+        form,
+        data,
+        form.attr('action'),
+        (
+            data.cedula == ''
+            || data.name == ''
+            || data.id_ciudad == ''
+            || data.email == ''
+        ),
+        function() { location.href = '/informacion-perfil'; }
     );
 });
 
@@ -234,14 +294,6 @@ $('#frmVenderNota').on('submit', function(event) {
         valorNeto: valorNeto,
         comision: comision,
     }
-
-    console.log(data, (
-        data.monto == 0
-        || data.nombreTitular == ''
-        || data.apellidoTitular == ''
-        || data.valorNeto == 0
-        || data.comision == 0
-    ));
 
     validateAndSend(
         form,
@@ -279,9 +331,9 @@ $('#btnSellNote').on('click', function(event){
     }
 });
 
-function validateAndSend(form, data, url, validate, onCloseSuccessDialog) {
+function validateAndSend(form, data, url, validationFailed, onCloseSuccessDialog) {
     // Verificar que haya ingresado todos los campos
-    if (validate) {
+    if (validationFailed) {
         alerta('Debe llenar todos los campos');
     } else {
         form.toggleClass('busy');
@@ -289,7 +341,8 @@ function validateAndSend(form, data, url, validate, onCloseSuccessDialog) {
         // Procesar respuesta
         $.ajaxSetup({
             headers: {
-                'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                'X-CSRF-TOKEN': $('input[name="_token"]').val(),
+                'Accept': 'application/json',
             }
         });
         const dialog = $('#modalDialog');
@@ -303,7 +356,7 @@ function validateAndSend(form, data, url, validate, onCloseSuccessDialog) {
                             onCloseSuccessDialog();
                         }
                     });
-                alerta(response.message);
+                alerta(response.message || 'Datos almacenados satisfactoriamente.');
             })
             .fail(function(response){
                 let detail = response.responseJSON.message;

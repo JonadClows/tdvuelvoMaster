@@ -43,7 +43,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 logo" style="bottom: 14px;">
                 <a href="/">
-                <img class="img-fluid" src="img/logoP6.png" />
+                <img class="img-fluid" src="{{ asset('img/logoP6.png') }}" />
                 </a>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
@@ -70,7 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 logo" style="bottom: 14px;">
                 <a href="/">
-                <img class="img-fluid" src="img/logoP6.png" />
+                <img class="img-fluid" src="{{ asset('img/logoP6.png') }}" />
                 </a>
                     
                 </div>

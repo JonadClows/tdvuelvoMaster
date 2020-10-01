@@ -19,19 +19,26 @@ class CuentaBancariaController extends Controller
         $this->tiposCta = TipoCuenta::get();
     }
 
-    public function formRegistro()
+    public function formRegistro($id=0)
     {
+        $cuenta = null;
+        if ($id!=0) {
+            $cuenta = Cuenta::where('id', '=', $id)->first();
+        }
         return view(
             'registroCuenta',
             [
                 'bancos' => $this->bancos,
                 'tiposCta' => $this->tiposCta,
+                'id' => $id,
+                'cuenta' => $cuenta,
             ]
         );
     }
 
     public function saveRegistro(Request $request) {
         $rules = [
+            'id' => 'required',
             'banco' => 'required',
             'tipoCta' => 'required',
             'identificacion' => 'required',
@@ -39,6 +46,7 @@ class CuentaBancariaController extends Controller
             'nombreCompleto' => 'required',
         ];
         $messages = [
+            'id.required' => 'No ha indicado un Id',
             'banco.required' => 'No ha indicado el banco',
             'tipoCta.required' => 'No ha indicado el tipo de cuenta',
             'identificacion.required' => 'No ha indicado la identificación',
@@ -49,7 +57,7 @@ class CuentaBancariaController extends Controller
 
         $user = \Auth::user()->id;
 
-        $cta = new Cuenta();
+        $cta = $request->id == 0 ? new Cuenta() : Cuenta::find($request->id);
         $cta->banco_id = $request->banco;
         $cta->tipocta_id = $request->tipoCta;
         $cta->identificacionTitular = $request->identificacion;
@@ -60,7 +68,7 @@ class CuentaBancariaController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => '<h5 class="success">¡Éxito!</h5>Tu cuenta bancaria ha sido registrada satisfactoriamente',
+            'message' => '<h5 class="success">¡Éxito!</h5>Tu cuenta bancaria ha sido ' . ($request->id == 0 ? 'registrada' : 'modificada') . ' satisfactoriamente',
         ]);
     }
 }
