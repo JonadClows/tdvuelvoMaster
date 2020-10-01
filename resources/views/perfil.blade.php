@@ -18,7 +18,7 @@
                             <p class="infoMP">{{ Auth::user()->name }}</p>
                             </div>
                             <div class="col-lg-6">
-                                <p class="infoMP">Ultimo login 26-09-2020 a las 09:30</p>
+                                <!--<p class="infoMP">Ultimo login 26-09-2020 a las 09:30</p>-->
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,15 @@
                                 <h5 class="fontMP">CUENTA BANCARIA</h5>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-5 text-center d-flex align-items-start justify-content-center">
-                                <a type="button" class="btnMP btnC" href="{{ route('registrarCuenta') }}">Registrar</a>
+                                <a type="button" id="linkRegistrarCuenta" class="btnMP btnC"
+                                    href="{{
+                                        sizeof($cuentas)==0
+                                            ? route('registrarCuenta')
+                                            : 'editar-cuenta/' . $cuentas[0]->id
+                                    }}"
+                                >
+                                    {{ sizeof($cuentas)==0 ? 'Registrar' : 'Editar' }}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -91,7 +99,7 @@
                             </div>
                         
                             <div class="col-lg-5 col-md-5 col-sm-5 mt-2 text-center">
-                                <button type="button" class="btnMP btnC">Cambiar contraseña</button>
+                                <a type="button" class="btnMP btnC" href="{{ route('cambiaPass') }}">Cambiar contraseña</a>
                             </div>
                         </div>
                     </div>

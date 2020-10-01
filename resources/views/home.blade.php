@@ -15,7 +15,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row pl-5 pt-5 text-center">
+            <div class="row pl-5 pt-5">
                 <div class="col-md-6 ">
                     <a id="" class="btnCrearCuenta btnC" href="{{ route('registro') }}">Crea tu cuenta</a>
                 </div>
@@ -35,7 +35,7 @@
     <div id="instrucciones" class="row mainW">
         <div class="col-lg-6 col-md-6 col-sm-12 parte1  ">
             <div class="row pl-5 pt-5" id="">
-                <div class="col-md-8 ">
+                <div class="col-sm-10 ">
                     <h1 class="colorC ubiFont" id="titlePrin">¿CÓMO VENDER MI NOTA?</h1>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row pl-5 pt-5 text-center">
+            <div class="row pl-5 pt-5">
                 <div class="col-md-6 ">
                     <a id="" class="btnCrearCuenta btnC" href="{{ route('registro') }}">Comienza aquí</a>
                 </div>
@@ -54,14 +54,14 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 pl-0 parte1  text-center">
             <!--<iframe width="682" height="405" src="img/videoVenderNota.mp4" style="padding-bottom: 21px;" frameborder="0" allowfullscreen autoplay></iframe>-->
-            <iframe width="489" height="300" src="img/videoVenderNota.mp4" style="padding-bottom: 25px; margin-top: 70px;" frameborder="0" allowfullscreen autoplay></iframe>
+            <iframe width="489" height="300" src="img/videoVenderNota.mp4" style="padding-bottom: 25px; margin-top: 70px;" frameborder="0" allowfullscreen></iframe>
             <!--<img class="img-fluid" style="margin-top: 35px;" width="610" src="img/videoVenderNota.jpg" />-->
         </div>
     </div>
     <div id="venderNota" class="row mainC">
         <div class="col-lg-6 col-md-6 col-sm-12 parte1  ">
             <div class="row pl-5 pt-5" id="">
-                <div class="col-md-8 ">
+                <div class="col-sm-10">
                     <h1 class="colorW text-left ubiFont" id="titlePrin">VENDE TU NOTA DE CRÉDITO</h1>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row pl-5 pt-5 text-center">
+            <div class="row pl-5 pt-5">
                 <div class="col-md-6 ">
                     <a id="" class="btnCrearCuenta btnW" href="{{ route('registro') }}">Crea tu cuenta</a>
                 </div>
@@ -85,7 +85,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12 parte1 ">
             <div class="simulador">
                 <div id="centrar">
-                    <p id="title">SIMULADOR</p>
+                    <h3 class="colorContact" id="title">SIMULADOR</h3>
                     <p>
                         Calcula el monto que recibiras por tu nota de crédito.
                         <br />Ingresa el valor de tu nota para disponibilizar el porcentaje que aplica y el valor correspodiente.
@@ -103,11 +103,11 @@
     </div>
     <div id="contactanos" class="row text-center colorContact">
         <div class="col-md-12">
-            <h1>Sigue estos tres pasos</h1>
+            <h1>Sigue estos cuatro pasos</h1>
             <!--<img src="vender2.svg" />-->
         </div>
         <div class="col-md-12">
-            <h6>y podrás convertir tu nota de credito en efectivo con rapidez</h6>
+            <h6>y podrás convertir tu nota de crédito en efectivo con rapidez</h6>
         </div>
         <br>
         <div class="container">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col col-lg-12 text-center pl-5 pr-5">3. FIRMA CONTRATO Y ENDOSA TU NOTA</div>
+                        <div class="col col-lg-12 text-center pl-5 pr-5">3. FIRMA CONTRATO</div>
                     </div>
                 </div>
                 <div class="col col-lg-3">
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col col-lg-12 text-center">RECIBE TU DINERO</div>
+                        <div class="col col-lg-12 text-center">4. ENDOSA Y RECIBE TU DINERO</div>
                     </div>
                 </div>
             </div>

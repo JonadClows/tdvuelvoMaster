@@ -16,17 +16,17 @@
                             <div class="col-6">
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <input type="text" name="montoVN" id="montoVN" placeholder="MONTO DE NOTA DE CRÉDITO" />
+                                        <input type="text" name="txtMontoNota" id="txtMontoNota" placeholder="MONTO DE NOTA DE CRÉDITO" />
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <input type="text" name="nombreVN" placeholder="NOMBRE DEL TITULAR" />
+                                        <input type="text" name="txtNombreTitular" id="txtNombreTitular" placeholder="NOMBRE DEL TITULAR" />
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <input type="text" name="apellidoVN" placeholder="APELLIDO DEL TITULAR" />
+                                        <input type="text" name="txtApellidoTitular" id="txtApellidoTitular" placeholder="APELLIDO DEL TITULAR" />
                                     </div>
                                 </div>
                             </div>
@@ -35,13 +35,13 @@
                                     <div class="col">
                                         <div class="calculatedValue w-100 h-100 d-flex flex-column justify-content-center align-items-center">
                                             <p class="label text-center">VALOR NETO<br>A RECIBIR</p>
-                                            <input type="text" name="valorNetoVN" id="valorNetoVN" class="value text-center mr-1 ml-1 mt-3" style="border: 0;width: 220px;" value="$00.00" readonly/>
+                                            <input type="text" name="valorNetoVN" id="txtTotalRecibir" class="value text-center mr-1 ml-1 mt-3" style="border: 0;width: 220px;" value="$0.00" readonly/>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="calculatedValue w-100 h-100 d-flex flex-column justify-content-center align-items-center">
                                             <p class="label text-center">COMISIÓN</p>
-                                            <input type="text" name="comisionVN" id="comisionVN" class="value text-center mr-1 ml-1" style="border: 0;width: 220px;" value="$00.00" readonly/>
+                                            <input type="text" name="comisionVN" id="txtComision" class="value text-center mr-1 ml-1" style="border: 0;width: 220px;" value="0%" readonly/>
                                         </div>
                                     </div>
                                 </div>

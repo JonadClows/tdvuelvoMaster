@@ -6,7 +6,7 @@
             <label class="register">INFORMACIÓN DE PERFIL</label>
         </div>
         <div class="col-12 d-flex justify-content-center">
-            <p class="infoMP">Ultimo login 26-09-2020 a las 09:30</p>
+            <!--<p class="infoMP">Ultimo login 26-09-2020 a las 09:30</p>-->
         </div>
     </div>
     <br>
@@ -24,7 +24,7 @@
                     value="{{ Auth::user()->telefono }}" disabled/>
                 <input type="text" name="telefono" placeholder="Provincia, Ciudad" class="text-capitalize"
                     value="{{ $nameProvincia }}, {{ $nameCanton }}" disabled/>
-                <input type="text" name="telefono" placeholder="Banco de Guayaquil"
+                <input type="text" name="telefono" placeholder="Aún no tienes una cuenta de banco registrada"
                     value="" disabled/>
                 <div class="row">
                     <div class="col-lg-12 mt-3">

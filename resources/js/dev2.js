@@ -8,7 +8,12 @@ $('#frmContacto').on('submit', function(event) {
         contactEmail: $('#contactEmail').val(),
     }
 
-    validateAndSend(form, data, '/contacto');
+    validateAndSend(
+        form,
+        data,
+        '/contacto',
+        Object.values(data).some((value) => value=='')
+    );
 });
 
 // Form registrar cuenta bancaria
@@ -25,7 +30,62 @@ $('#frmRegistroCuenta').on('submit', function(event){
         nombreCompleto: $('#nombreCompleto').val().trim(),
     }
 
-    validateAndSend(form, data, '/registrar-cuenta', function() { location.href = '/miperfil'; });
+    validateAndSend(
+        form,
+        data,
+        '/registrar-cuenta',
+        Object.values(data).some((value) => value==''),
+        function() { location.href = '/miperfil'; }
+    );
+});
+
+// Form vender nota
+$('#frmVenderNota').on('submit', function(event) {
+    event.preventDefault();
+    const form = $(this);
+
+    // Empaquetar los datos
+    const monto = parseFloat( $('#txtMontoNota').val() );
+    const valorNeto = parseFloat( $('#txtTotalRecibir').val().trim().replaceAll('$','').replaceAll(',','.') );
+    const comision = parseFloat( $('#txtComision').val().trim().replaceAll('$','').replaceAll(',','.') );
+    const data = {
+        monto: monto,
+        nombreTitular: $('#txtNombreTitular').val(),
+        apellidoTitular: $('#txtApellidoTitular').val(),
+        valorNeto: valorNeto,
+        comision: comision,
+    }
+
+    console.log(data, (
+        data.monto == 0
+        || data.nombreTitular == ''
+        || data.apellidoTitular == ''
+        || data.valorNeto == 0
+        || data.comision == 0
+    ));
+
+    validateAndSend(
+        form,
+        data,
+        '/vender-nota',
+        (
+            data.monto == 0
+            || data.nombreTitular == ''
+            || data.apellidoTitular == ''
+            || data.valorNeto == 0
+            || data.comision == 0
+        ),
+        function() { location.href = '/miperfil'; }
+    );
+});
+
+// Botón registrar cuenta bancaria
+$('#linkRegistrarCuenta').on('click', function(event) {
+    const me = $(this);
+    if (me.hasClass('disabled')) {
+        alerta('Ya ha registrado una cuenta bancaria.');
+        event.preventDefault();
+    }
 })
 
 
@@ -40,9 +100,9 @@ $('#btnSellNote').on('click', function(event){
     }
 });
 
-function validateAndSend(form, data, url, onCloseSuccessDialog) {
+function validateAndSend(form, data, url, validate, onCloseSuccessDialog) {
     // Verificar que haya ingresado todos los campos
-    if (Object.values(data).some((value) => value=='')) {
+    if (validate) {
         alerta('Debe llenar todos los campos');
     } else {
         form.toggleClass('busy');

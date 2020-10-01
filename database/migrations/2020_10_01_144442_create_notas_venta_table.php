@@ -15,11 +15,12 @@ class CreateNotasVentaTable extends Migration
     {
         Schema::create('notas_venta', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('monto_nota');
             $table->unsignedBigInteger('user_id');
-            $table->string('apellidoTitular');
             $table->string('nombreTitular');
-            $table->string('numero');
+            $table->string('apellidoTitular');
+            $table->double('montoNota', 8, 2);
+            $table->double('valorNeto', 8, 2);
+            $table->double('comision', 8, 2);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
