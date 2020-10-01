@@ -146,6 +146,11 @@ $('#btnSellNote').on('click', function(event){
     event.preventDefault();
     const me = $(this);
     if (me.hasClass('disabled')) {
+        const dialog = $('#modalDialog');
+        dialog.off('hidden.bs.modal')
+            .on('hidden.bs.modal', function(e){
+                location.href = 'registrar-cuenta';
+            });
         alerta('<h5>¡Importante!</h5>Debes registrar tu cuenta bancaria antes de vender una nota.');
     } else {
         location.href = me.attr('data-url');
