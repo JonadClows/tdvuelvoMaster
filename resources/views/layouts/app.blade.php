@@ -60,7 +60,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dropdown-content">
                             <a href="{{ route('registro') }}">Editar datos</a>
                             <a href="{{ route('registrarCuenta') }}">Editar Cuenta Bancaria</a>
-                            <a href="#">Cambiar Contraseña</a>
+                            <a href="{{ route('cambiaPass') }}">Cambiar Contraseña</a>
                         </div>
                     </div>
                     
