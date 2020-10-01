@@ -28,7 +28,8 @@ mix
     .sass('resources/sass/estilos2.scss', 'public/css/estilos2.css')
     .styles([
         'resources/css/app.css',
-        'resources/css/estilos.css',
+        'resources/css/estilos.css', 
+        'resources/css/estilos-perfil.css'
     ], 'public/css/all.css');
 /*
 mix.styles([
