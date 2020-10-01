@@ -25,11 +25,11 @@ mix
         'resources/js/dev2.js',
         // 'resources/js/app.js',
     ], 'public/js/app.js')
-    .sass('resources/sass/estilos2.scss',  'public/css/estilos2.css')
+    .sass('resources/sass/estilos2.scss', 'public/css/estilos2.css')
     .styles([
         'resources/css/app.css',
         'resources/css/estilos.css',
-    ], 'public/css/app.css');
+    ], 'public/css/all.css');
 /*
 mix.styles([
     'resources/css/app.css',
