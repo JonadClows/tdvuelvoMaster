@@ -55,7 +55,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 @else
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
-                    <a class="navFont" href="{{ route('informacionPerfil') }}" >Mi perfil</a>
+                    <div class="dropdown-hover">
+                        <a class="navFont py-4" href="{{ route('informacionPerfil') }}" >Mi perfil</a>
+                        <div class="dropdown-content">
+                            <a href="{{ route('registro') }}">Editar datos</a>
+                            <a href="{{ route('registrarCuenta') }}">Editar Cuenta Bancaria</a>
+                            <a href="{{ route('cambiaPass') }}">Cambiar Contraseña</a>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
                     <p class="navFont"></p>
@@ -74,13 +82,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                    <!-- <a class="navFont" href="{{ route('informacionPerfil') }}" >Cerrar sesión</a>
-                    <div class="dropdown-content border">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                    <div> -->
                 </div>
                 </div>
                 
