@@ -45,6 +45,7 @@ Route::get('/registro', function () {
 
 Route::get('/registrar-cuenta', [CuentaBancariaController::class, 'formRegistro'])->name('registrarCuenta');
 Route::post('/registrar-cuenta', [CuentaBancariaController::class, 'saveRegistro'])->name('guardarCuenta');
+Route::get('/editar-cuenta/{id}', [CuentaBancariaController::class, 'formRegistro'])->name('editarCuenta');
 
 Route::get('/vender-nota', [NotaController::class, 'venderNota'])->name('venderNota');
 Route::post('/vender-nota', [NotaController::class, 'saveNota'])->name('guardarNota');
