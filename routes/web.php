@@ -23,6 +23,14 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/miperfil', [UserController::class, 'profile'])->name('perfil');
 
     Route::put('/update/{id}',[UserController::class, 'updateUser']);
+
+    Route::put('/updatePass',[UserController::class, 'updatePass']);
+
+    //Route::get('/cambiaPass',[UserController::class, 'getDatosGeo'])->name('registro');
+
+    Route::get('/cambiaPass', function () {
+        return view('cambiarPass');
+    })->name('cambiaPass');
 });
 
 Route::get('/', function () {

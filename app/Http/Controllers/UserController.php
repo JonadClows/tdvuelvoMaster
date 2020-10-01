@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Provincia;
 use App\Models\Canton;
 use App\Models\Cuenta;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -45,5 +46,23 @@ class UserController extends Controller
         $user = \Auth::user()->id;
         $cuentas = Cuenta::where('user_id','=',$user)->get();
         return view('perfil', ['cuentas' => $cuentas]);
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public function updatePass() {
+        
+        $this->validate(request(), ['password' => 'required|min:6|confirmed',]);
+
+        $user = User::find(\Auth::user()->id);
+        
+        $user->fill([
+            'password' => Hash::make(request()->get('password')),
+        ])->save();
+
+        return redirect('miperfil');
     }
 }
