@@ -21,6 +21,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function (){
     // AQUI VAN LAS RUTAS
     Route::get('/miperfil', [UserController::class, 'profile'])->name('perfil');
+    Route::get('/informacion-perfil', [UserController::class, 'infoProfile'])->name('informacionPerfil');
 
     Route::put('/update/{id}',[UserController::class, 'updateUser']);
 });

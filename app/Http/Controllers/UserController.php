@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Provincia;
 use App\Models\Canton;
@@ -45,5 +46,30 @@ class UserController extends Controller
         $user = \Auth::user()->id;
         $cuentas = Cuenta::where('user_id','=',$user)->get();
         return view('perfil', ['cuentas' => $cuentas]);
+    }
+
+    public function infoProfile() {
+        $user = \Auth::user();
+        $userId = \Auth::user()->id;
+        $nameCanton = '';
+        $nameProvincia = '';
+
+        $cuentas = Cuenta::where('user_id','=',$userId)->get();
+
+        if( $user->id_ciudad != null && $user->id_ciudad != '' ) {
+            //Canton
+            $canton = Canton::where('id_canton','=',$user->id_ciudad)->get();
+            //Provincia
+            $provincia = Provincia::where('id_provincia','=',$canton[0]->id_provincia)->get();
+
+            $nameCanton = $canton[0]->name;
+            $nameProvincia = $provincia[0]->name;
+        }
+        
+        return view('informacionPerfil', [
+            'cuentas' => $cuentas,
+            'nameCanton' => Str::lower( $nameCanton ),
+            'nameProvincia' => Str::lower( $nameProvincia )
+        ]);
     }
 }
