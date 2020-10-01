@@ -91,7 +91,7 @@
                             </div>
                         
                             <div class="col-lg-5 col-md-5 col-sm-5 mt-2 text-center">
-                                <button type="button" class="btnMP btnC">Cambiar contraseña</button>
+                                <a type="button" class="btnMP btnC" href="{{ route('cambiaPass') }}">Cambiar contraseña</a>
                             </div>
                         </div>
                     </div>

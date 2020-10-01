@@ -136,44 +136,42 @@ $("#montoVN").bind("change paste keyup", function() {
     var totalRecibir;
     var descuento;
 
-    if ($(this).val().length > 0) {
-
-
+    if (valor > 0) {
         if (valor >= 1 && valor <= 550) {
             totalRecibir = valor - (valor * 0.095);
-            descuento = valor * 0.095;
+            descuento = "9,5%";
         } else if (valor >= 551 && valor <= 1000) {
             totalRecibir = valor - (valor * 0.086);
-            descuento = valor * 0.086;
+            descuento = "8,6%";
 
         } else if (valor >= 1001 && valor <= 3000) {
             totalRecibir = valor - (valor * 0.081);
-            descuento = valor * 0.081;
+            descuento = "8,1%";
 
         } else if (valor >= 3001 && valor <= 5000) {
             totalRecibir = valor - (valor * 0.071);
-            descuento = valor * 0.071;
+            descuento = "7,1%";
 
         } else if (valor >= 5001 && valor <= 8000) {
             totalRecibir = valor - (valor * 0.059);
-            descuento = valor * 0.059;
+            descuento = "5,9%";
 
         } else if (valor >= 8001 && valor <= 10000) {
             totalRecibir = valor - (valor * 0.046);
-            descuento = valor * 0.046;
+            descuento = "4,6%";
 
         } else if (valor > 10000) {
-            $("#valorNetoVN").val('$00.00');
-            descuento = "$00.00";
-            alert("Por favor contactarse con nosotros para una cotización personalizada");
+            $("#txtTotalRecibir").val('-');
+            descuento = "-";
+            totalRecibir = "-";
+            alerta("Por favor contactarse con nosotros para una cotización personalizada");
         }
-        $("#comisionVN").val('$' + descuento.toFixed(2));
-        $("#valorNetoVN").val('$' + totalRecibir.toFixed(2));
-
+        $("#txtComision").val(descuento);
+        $("#txtTotalRecibir").val(totalRecibir == '-' ? totalRecibir : totalRecibir.toFixed(0));
     } else {
 
-        $("#comisionVN").val('$00.00');
-        $("#valorNetoVN").val('$00.00');
+        $("#txtComision").val('');
+        $("#txtTotalRecibir").val('');
     }
 });
 // Form contáctenos
