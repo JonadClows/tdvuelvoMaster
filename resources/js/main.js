@@ -20,9 +20,7 @@ $("#txtMontoNota").bind("change paste keyup", function() {
     var totalRecibir;
     var descuento;
 
-    if ($(this).val().length > 0) {
-
-
+    if (valor > 0) {
         if (valor >= 1 && valor <= 550) {
             totalRecibir = valor - (valor * 0.095);
             descuento = "9,5%";
@@ -49,15 +47,20 @@ $("#txtMontoNota").bind("change paste keyup", function() {
         } else if (valor > 10000) {
             $("#txtTotalRecibir").val('-');
             descuento = "-";
-            alert("Por favor contactarse con nosotros para una cotización personalizada");
+            totalRecibir = "-";
+            alerta("Por favor contactarse con nosotros para una cotización personalizada");
         }
         $("#txtComision").val(descuento);
-        $("#txtTotalRecibir").val(totalRecibir.toFixed(0));
-
+        $("#txtTotalRecibir").val(
+            (
+                totalRecibir=='-'
+                    ? totalRecibir
+                    : "$" + totalRecibir.toFixed(0)
+            )
+        );
     } else {
-
-        $("#txtComision").val('');
-        $("#txtTotalRecibir").val('');
+        $("#txtComision").val('0%');
+        $("#txtTotalRecibir").val('$0.00');
     }
 });
 
