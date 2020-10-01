@@ -72,9 +72,11 @@
                                 <select name="selectCanton" id="selectCanton"
                                     class="cbCiudad btn btn-outline-secondary">
                                     <option value="Ciudad" {{ is_null($canton) ? 'selected="selected"' : '' }} disabled hidden>Cantón</option>
+                                    @if(!is_null($cantones))
                                     @foreach($cantones as $c)
                                     <option value="{{ $c['id_canton'] }}" {{ !is_null($canton) ? ($c['id_canton'] == $canton->id_canton ? 'selected="selected"' : '') : '' }}>{{ $c['name'] }}</option>
                                     @endforeach
+                                    @endif
                                 </select>
                             </div>
                         </div>
