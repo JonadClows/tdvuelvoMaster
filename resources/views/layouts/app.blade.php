@@ -40,24 +40,29 @@
                 </div>
                 @else
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
-                    <p class="navFont">Empresa</p>
+                    <a class="navFont" href="{{ route('informacionPerfil') }}" >Mi perfil</a>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
-                    <p class="navFont">Instrucciones</p>
+                    <p class="navFont"></p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 logo" style="bottom: 14px;">
                     <img class="img-fluid" src="img/logoP6.png" />
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
-                    <a class="navFont" href="{{ route('venderNota') }}">Vender nota</a>
+                    <a class="navFont" href="{{ route('venderNota') }}"></a>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center dropdown">
-                    <a class="navFont" href="{{ route('perfil') }}" >Mi perfil</a>
+                    <a class="navFont" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    <!-- <a class="navFont" href="{{ route('informacionPerfil') }}" >Cerrar sesión</a>
                     <div class="dropdown-content border">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
+                    <div> -->
                 </div>
                 </div>
                 
