@@ -87,7 +87,7 @@ $('#selectProvincia').change(function() {
 
             $('#selectCanton').empty();
             var sel = document.getElementById('selectCanton');
-            $('#selectCanton').append('<option value="Canton" selected="selected" disabled hidden>Canton</option>');
+            $('#selectCanton').append('<option value="Canton" selected="selected" disabled hidden>Cantón</option>');
 
             $.each(ec, function(key, values) {
                 var opt = document.createElement('option');

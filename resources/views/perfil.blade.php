@@ -18,7 +18,7 @@
                             <p class="infoMP">{{ Auth::user()->name }}</p>
                             </div>
                             <div class="col-lg-6">
-                                <p class="infoMP">Ultimo login 26-09-2020 a las 09:30</p>
+                                <!--<p class="infoMP">Ultimo login 26-09-2020 a las 09:30</p>-->
                             </div>
                         </div>
                     </div>
