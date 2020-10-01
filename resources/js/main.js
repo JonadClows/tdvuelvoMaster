@@ -115,3 +115,50 @@ function soloLetras(e) {
     var key = window.Event ? e.which : e.keyCode
     return (key >= 65 && key <= 90 || key >= 97 && key <= 122)
 }
+
+$("#montoVN").bind("change paste keyup", function() {
+
+    var valor = parseInt($(this).val());
+    var totalRecibir;
+    var descuento;
+
+    if ($(this).val().length > 0) {
+
+
+        if (valor >= 1 && valor <= 550) {
+            totalRecibir = valor - (valor * 0.095);
+            descuento = valor * 0.095;
+        } else if (valor >= 551 && valor <= 1000) {
+            totalRecibir = valor - (valor * 0.086);
+            descuento = valor * 0.086;
+
+        } else if (valor >= 1001 && valor <= 3000) {
+            totalRecibir = valor - (valor * 0.081);
+            descuento = valor * 0.081;
+
+        } else if (valor >= 3001 && valor <= 5000) {
+            totalRecibir = valor - (valor * 0.071);
+            descuento = valor * 0.071;
+
+        } else if (valor >= 5001 && valor <= 8000) {
+            totalRecibir = valor - (valor * 0.059);
+            descuento = valor * 0.059;
+
+        } else if (valor >= 8001 && valor <= 10000) {
+            totalRecibir = valor - (valor * 0.046);
+            descuento = valor * 0.046;
+
+        } else if (valor > 10000) {
+            $("#valorNetoVN").val('$00.00');
+            descuento = "$00.00";
+            alert("Por favor contactarse con nosotros para una cotización personalizada");
+        }
+        $("#comisionVN").val('$' + descuento.toFixed(2));
+        $("#valorNetoVN").val('$' + totalRecibir.toFixed(2));
+
+    } else {
+
+        $("#comisionVN").val('$00.00');
+        $("#valorNetoVN").val('$00.00');
+    }
+});
