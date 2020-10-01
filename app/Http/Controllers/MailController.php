@@ -18,7 +18,7 @@ class MailController extends Controller
 
         try {
             // Envía el email
-            Mail::to('jchernandez@grupo-link.com')
+            Mail::to('info@tdvuelvo.com')
                 ->send(new Contacto($request->contactEmail));
         }catch(\Exception $e) {
             $message = 'No se ha podido contactar con el servidor, por favor, intente más tarde.';
