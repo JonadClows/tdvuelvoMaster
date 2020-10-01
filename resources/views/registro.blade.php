@@ -61,7 +61,7 @@
                                     class="cbCiudad btn btn-outline-secondary">
                                     <option value="Provincia" {{ is_null($provincia) ? 'selected="selected"' : '' }} disabled hidden>Provincia</option>
                                     @foreach($provincias as $p)
-                                    <option value="{{ $p['id_provincia'] }}" {{ $p['id_provincia'] == $provincia->id_provincia ? 'selected="selected"' : '' }}>{{ $p['name'] }}</option>
+                                    <option value="{{ $p['id_provincia'] }}" {{ !is_null($provincia) ? ($p['id_provincia'] == $provincia->id_provincia ? 'selected="selected"' : '') : '' }}>{{ $p['name'] }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -73,7 +73,7 @@
                                     class="cbCiudad btn btn-outline-secondary">
                                     <option value="Ciudad" {{ is_null($canton) ? 'selected="selected"' : '' }} disabled hidden>Cantón</option>
                                     @foreach($cantones as $c)
-                                    <option value="{{ $c['id_canton'] }}" {{ $c['id_canton'] == $canton->id_canton ? 'selected="selected"' : '' }}>{{ $c['name'] }}</option>
+                                    <option value="{{ $c['id_canton'] }}" {{ !is_null($canton) ? ($c['id_canton'] == $canton->id_canton ? 'selected="selected"' : '') : '' }}>{{ $c['name'] }}</option>
                                     @endforeach
                                 </select>
                             </div>
