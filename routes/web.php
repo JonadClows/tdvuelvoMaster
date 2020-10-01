@@ -24,6 +24,14 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/informacion-perfil', [UserController::class, 'infoProfile'])->name('informacionPerfil');
 
     Route::put('/update/{id}',[UserController::class, 'updateUser']);
+
+    Route::put('/updatePass',[UserController::class, 'updatePass']);
+
+    //Route::get('/cambiaPass',[UserController::class, 'getDatosGeo'])->name('registro');
+
+    Route::get('/cambiaPass', function () {
+        return view('cambiarPass');
+    })->name('cambiaPass');
 });
 
 Route::get('/', function () {
@@ -46,6 +54,7 @@ Route::get('/registro', function () {
 
 Route::get('/registrar-cuenta', [CuentaBancariaController::class, 'formRegistro'])->name('registrarCuenta');
 Route::post('/registrar-cuenta', [CuentaBancariaController::class, 'saveRegistro'])->name('guardarCuenta');
+Route::get('/editar-cuenta/{id}', [CuentaBancariaController::class, 'formRegistro'])->name('editarCuenta');
 
 Route::get('/vender-nota', [NotaController::class, 'venderNota'])->name('venderNota');
 Route::post('/vender-nota', [NotaController::class, 'saveNota'])->name('guardarNota');

@@ -17,11 +17,11 @@ class Nota extends Model
      * @var array
      */
     protected $fillable = [
-        'monto_nota',
+        'user_id',
         'nombreTitular',
         'apellidoTitular',
-        'valor_neto',
+        'montoNota',
+        'valorNeto',
         'comision',
     ];
-
 }

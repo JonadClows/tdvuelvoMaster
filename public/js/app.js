@@ -34,9 +34,7 @@ $("#txtMontoNota").bind("change paste keyup", function() {
     var totalRecibir;
     var descuento;
 
-    if ($(this).val().length > 0) {
-
-
+    if (valor > 0) {
         if (valor >= 1 && valor <= 550) {
             totalRecibir = valor - (valor * 0.095);
             descuento = "9,5%";
@@ -63,15 +61,20 @@ $("#txtMontoNota").bind("change paste keyup", function() {
         } else if (valor > 10000) {
             $("#txtTotalRecibir").val('-');
             descuento = "-";
-            alert("Por favor contactarse con nosotros para una cotización personalizada");
+            totalRecibir = "-";
+            alerta("Por favor contactarse con nosotros para una cotización personalizada");
         }
         $("#txtComision").val(descuento);
-        $("#txtTotalRecibir").val(totalRecibir.toFixed(0));
-
+        $("#txtTotalRecibir").val(
+            (
+                totalRecibir=='-'
+                    ? totalRecibir
+                    : "$" + totalRecibir.toFixed(0)
+            )
+        );
     } else {
-
-        $("#txtComision").val('');
-        $("#txtTotalRecibir").val('');
+        $("#txtComision").val('0%');
+        $("#txtTotalRecibir").val('$0.00');
     }
 });
 
@@ -136,44 +139,42 @@ $("#montoVN").bind("change paste keyup", function() {
     var totalRecibir;
     var descuento;
 
-    if ($(this).val().length > 0) {
-
-
+    if (valor > 0) {
         if (valor >= 1 && valor <= 550) {
             totalRecibir = valor - (valor * 0.095);
-            descuento = valor * 0.095;
+            descuento = "9,5%";
         } else if (valor >= 551 && valor <= 1000) {
             totalRecibir = valor - (valor * 0.086);
-            descuento = valor * 0.086;
+            descuento = "8,6%";
 
         } else if (valor >= 1001 && valor <= 3000) {
             totalRecibir = valor - (valor * 0.081);
-            descuento = valor * 0.081;
+            descuento = "8,1%";
 
         } else if (valor >= 3001 && valor <= 5000) {
             totalRecibir = valor - (valor * 0.071);
-            descuento = valor * 0.071;
+            descuento = "7,1%";
 
         } else if (valor >= 5001 && valor <= 8000) {
             totalRecibir = valor - (valor * 0.059);
-            descuento = valor * 0.059;
+            descuento = "5,9%";
 
         } else if (valor >= 8001 && valor <= 10000) {
             totalRecibir = valor - (valor * 0.046);
-            descuento = valor * 0.046;
+            descuento = "4,6%";
 
         } else if (valor > 10000) {
-            $("#valorNetoVN").val('$00.00');
-            descuento = "$00.00";
-            alert("Por favor contactarse con nosotros para una cotización personalizada");
+            $("#txtTotalRecibir").val('-');
+            descuento = "-";
+            totalRecibir = "-";
+            alerta("Por favor contactarse con nosotros para una cotización personalizada");
         }
-        $("#comisionVN").val('$' + descuento.toFixed(2));
-        $("#valorNetoVN").val('$' + totalRecibir.toFixed(2));
-
+        $("#txtComision").val(descuento);
+        $("#txtTotalRecibir").val(totalRecibir == '-' ? totalRecibir : totalRecibir.toFixed(0));
     } else {
 
-        $("#comisionVN").val('$00.00');
-        $("#valorNetoVN").val('$00.00');
+        $("#txtComision").val('');
+        $("#txtTotalRecibir").val('');
     }
 });
 // Form contáctenos
@@ -186,7 +187,12 @@ $('#frmContacto').on('submit', function(event) {
         contactEmail: $('#contactEmail').val(),
     }
 
-    validateAndSend(form, data, '/contacto');
+    validateAndSend(
+        form,
+        data,
+        '/contacto',
+        Object.values(data).some((value) => value=='')
+    );
 });
 
 // Form registrar cuenta bancaria
@@ -203,7 +209,62 @@ $('#frmRegistroCuenta').on('submit', function(event){
         nombreCompleto: $('#nombreCompleto').val().trim(),
     }
 
-    validateAndSend(form, data, '/registrar-cuenta', function() { location.href = '/miperfil'; });
+    validateAndSend(
+        form,
+        data,
+        '/registrar-cuenta',
+        Object.values(data).some((value) => value==''),
+        function() { location.href = '/miperfil'; }
+    );
+});
+
+// Form vender nota
+$('#frmVenderNota').on('submit', function(event) {
+    event.preventDefault();
+    const form = $(this);
+
+    // Empaquetar los datos
+    const monto = parseFloat( $('#txtMontoNota').val() );
+    const valorNeto = parseFloat( $('#txtTotalRecibir').val().trim().replaceAll('$','').replaceAll(',','.') );
+    const comision = parseFloat( $('#txtComision').val().trim().replaceAll('$','').replaceAll(',','.') );
+    const data = {
+        monto: monto,
+        nombreTitular: $('#txtNombreTitular').val(),
+        apellidoTitular: $('#txtApellidoTitular').val(),
+        valorNeto: valorNeto,
+        comision: comision,
+    }
+
+    console.log(data, (
+        data.monto == 0
+        || data.nombreTitular == ''
+        || data.apellidoTitular == ''
+        || data.valorNeto == 0
+        || data.comision == 0
+    ));
+
+    validateAndSend(
+        form,
+        data,
+        '/vender-nota',
+        (
+            data.monto == 0
+            || data.nombreTitular == ''
+            || data.apellidoTitular == ''
+            || data.valorNeto == 0
+            || data.comision == 0
+        ),
+        function() { location.href = '/miperfil'; }
+    );
+});
+
+// Botón registrar cuenta bancaria
+$('#linkRegistrarCuenta').on('click', function(event) {
+    const me = $(this);
+    if (me.hasClass('disabled')) {
+        alerta('Ya ha registrado una cuenta bancaria.');
+        event.preventDefault();
+    }
 })
 
 
@@ -218,9 +279,9 @@ $('#btnSellNote').on('click', function(event){
     }
 });
 
-function validateAndSend(form, data, url, onCloseSuccessDialog) {
+function validateAndSend(form, data, url, validate, onCloseSuccessDialog) {
     // Verificar que haya ingresado todos los campos
-    if (Object.values(data).some((value) => value=='')) {
+    if (validate) {
         alerta('Debe llenar todos los campos');
     } else {
         form.toggleClass('busy');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Nota;
+use Illuminate\Support\Facades\Mail;
+use PDF;
 
 class NotaController extends Controller
 {
@@ -13,34 +15,52 @@ class NotaController extends Controller
 
     public function saveNota(Request $request) {
         $rules = [
-            'montoVN' => 'required',
-            'nombreVN' => 'required',
-            'apellidoVN' => 'required',
+            'monto' => 'required',
+            'nombreTitular' => 'required',
+            'apellidoTitular' => 'required',
+            'valorNeto' => 'required',
+            'comision' => 'required',
         ];
         $messages = [
-            'montoVN.required' => 'No ha indicado el monto',
-            'nombreVN.required' => 'No ha indicado el nombre del titular',
-            'apellidoVN.required' => 'No ha indicado el apellido del titular',
+            'monto.required' => 'El monto es requerido',
+            'nombreTitular.required' => 'El nombre del titular es requerido',
+            'apellidoTitular.required' => 'El apellido del titular es requerido',
+            'valorNeto.required' => 'El total es requerido',
+            'comision.required' => 'La comisión es requerida',
         ];
         $request->validate($rules, $messages);
 
         $user_id = \Auth::user()->id;
-        $user_ced = \Auth::user()->cedula;
+        $email = \Auth::user()->email;
 
         $nota = new Nota();
-        $nota->monto_nota = $request->montoVN;
-        $nota->nombreTitular = $request->nombreVN;
-        $nota->apellidoTitular = $request->apellidoVN;
-        $nota->valor_neto = $request->valorNetoVN;
-        $nota->comision = $request->comisionVN;
-        $nota->user_id = $user;
+        $nota->nombreTitular = $request->nombreTitular;
+        $nota->apellidoTitular = $request->apellidoTitular;
+        $nota->montoNota = $request->monto;
+        $nota->valorNeto = $request->valorNeto;
+        $nota->comision = $request->comision;
+        $nota->user_id = $user_id;
         $nota->save();
+
+        // Una vez guardados los datos, ahora se genera el pdf
+
+        $data = [
+            'endosante' => trim($request->nombreTitular) . ' ' . trim($request->apellidoTitular)
+        ];
+
+        $pdf = PDF::loadView('pdf.ventaNota', $data, [ 'format' => 'A4' ]);
+
+        Mail::send('mail.ventaNota', $data, function($message) use ($pdf, $email){
+            $message->from('no-reply@tdvuelvo.com');
+            $message->to($email);
+            $message->subject('TDVuelvo: Nota de Venta');
+            $message->attachData($pdf->output(),'nota_de_venta.pdf');
+        });
+
 
         return response()->json([
             'success' => true,
-            'message' => 'Nos contactaremos contigo a tu
-            correo registrado para continuar
-            con los siguientes pasos de venta.',
+            'message' => 'Nos contactaremos contigo a tu correo registrado para continuar con los siguientes pasos de venta.',
         ]);
     }
 }
