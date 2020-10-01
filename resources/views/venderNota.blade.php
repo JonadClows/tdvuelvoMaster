@@ -3,6 +3,69 @@
 <div id="registro" class="container-fluid espacio" style="display: block;">
     <div class="row pt-5">
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <label class="register">INGRESA LOS SIGUIENTES DATOS<br>Y VENDE TU NOTA DE CRÉDITO</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 align-self-center">
+            <div id="register" class="sellNote px-4">
+                <div class="container-fluid">
+                    <form id="frmVenderNota" action="" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <input type="text" name="monto" placeholder="MONTO DE NOTA DE CRÉDITO" />
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <input type="text" name="nombre" placeholder="NOMBRE DEL TITULAR" />
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <input type="text" name="apellido" placeholder="APELLIDO DEL TITULAR" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row pb-4 h-100">
+                                    <div class="col">
+                                        <div class="calculatedValue w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+                                            <p class="label text-center">VALOR NETO<br>A RECIBIR</p>
+                                            <p class="value text-center">$00.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="calculatedValue w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+                                            <p class="label text-center">COMISIÓN</p>
+                                            <p class="value text-center">$00.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col buttonWrapper">
+                                <button class="btn-form" type="submit">Continuar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+{{-- @extends('layouts.app')
+@section('seccionPrincipal')
+<div id="registro" class="container-fluid espacio" style="display: block;">
+    <div class="row pt-5">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <label class="register">INGRESA LOS SIGUIENTES DATOS <br />Y VENDE TU NOTA DE CRÉDITO</label>
         </div>
     </div>
@@ -72,4 +135,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

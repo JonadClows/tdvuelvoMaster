@@ -14,11 +14,11 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 align-self-center">
             <div id="register" class="accountRegister">
-                <form action="" method="POST">
+                <form id="frmRegistroCuenta" action="" method="POST">
                     @csrf
                     <div class="input-group-append">
                         <select name="banco" id="banco" class=" btn btn-outline-secondary">
-                            <option>Banco</option>
+                            <option value="">Banco</option>
                             @foreach ($bancos as $banco)
                                 <option value="{{$banco->id}}" {{ ( old("banco") == $banco->id ? "selected" : "" ) }}>
                                     {{$banco->name}}
@@ -28,7 +28,7 @@
                     </div>
                     <div class="input-group-append">
                         <select name="tipoCta" id="tipoCta" class=" btn btn-outline-secondary">
-                            <option>Tipo cuenta</option>
+                            <option value="">Tipo cuenta</option>
                             @foreach ($tiposCta as $tipoCta)
                                 <option value="{{$tipoCta->id}}" {{ ( old("tipoCta") == $tipoCta->id ? "selected" : "" ) }}>
                                     {{$tipoCta->name}}
@@ -36,14 +36,19 @@
                             @endforeach
                         </select>
                     </div>
-                    <input type="text" name="cedula" placeholder="C.I./ Ruc" />
-                    <input type="text" name="nroCta" placeholder="Numero de cuenta" />
-                    <input type="text" name="nombreCompleto" placeholder="Nombre y Apellido"/>
+                    <input type="text" name="identificacion" id="identificacion" placeholder="C.I./ Ruc" />
+                    <input type="text" name="nroCta" id="nroCta" placeholder="Numero de cuenta" />
+                    <input type="text" name="nombreCompleto" id="nombreCompleto" placeholder="Nombre y Apellido"/>
                     
-                    <div class="row mt-5">
+                    <div class="row mt-4">
                         <div class="col">
-                            <div class="input-group-append">
-                                <input class="fondoAzul" type="submit" value="Confirmar" />
+                            <div class="input-group-append text-center">
+                                <button class="btn-form mx-auto" type="submit">
+                                    <span class="btnText">Confirmar</span>
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Enviando...</span>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>

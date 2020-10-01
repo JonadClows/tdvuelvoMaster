@@ -13,11 +13,21 @@ class MailController extends Controller
             'contactEmail' => 'required|email',
         ]);
 
-        // Envía el email
-        Mail::to('jchernandez@grupo-link.com')
-            ->send(new Contacto($request->contactEmail));
+        $ok = true;
+        $message = '<h5>¡Gracias!</h5>Estaremos en contacto contigo en las próximas 24 horas.';
 
-        // Una vez enviado el email redirecciona
-        return redirect('/');
+        try {
+            // Envía el email
+            Mail::to('jchernandez@grupo-link.com')
+                ->send(new Contacto($request->contactEmail));
+        }catch(\Exception $e) {
+            $message = 'No se ha podido contactar con el servidor, por favor, intente más tarde.';
+            $ok = false;
+        }
+
+        return response()->json([
+            'success' => $ok,
+            'message' => $message,
+        ]);
     }
 }
