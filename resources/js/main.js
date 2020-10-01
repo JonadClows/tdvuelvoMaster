@@ -78,7 +78,6 @@ $('#selectProvincia').change(function() {
                 opt.value = values.id_canton;
                 sel.appendChild(opt);
             });
-            $("#selectCanton").selectpicker('refresh');
         },
         error: function() {
             console.log("No se ha podido obtener la información");
