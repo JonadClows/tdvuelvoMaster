@@ -8,6 +8,12 @@
     src: url("../Fonts/Abadi\ mtstd-bold-opentype.otf");
 }
 
+@font-face {
+    font-family: "Abadi mtstd-light";
+    src: url("../Fonts/Abadi\ mtstd-light.otf");
+}
+
+
 
 /*Cabecera ->*/
 
@@ -91,7 +97,7 @@ div.dropdown div.dropdown-content {
 /*Letras --> */
 
 h1#titlePrin {
-    font-size: 60px;
+    font-size: 5em;
     font-weight: bold;
     line-height: 60px;
     font-family: "Abadi mtstd";
@@ -100,11 +106,12 @@ h1#titlePrin {
 .boldSize {
     font-size: 22px;
     font-weight: bold;
+    font-family: "Abadi bold";
 }
 
 .sizeP {
-    font-size: 21px;
-    font-family: "Abadi mtstd";
+    font-size: 2em;
+    font-family: "Abadi mtstd-light";
 }
 
 a.sizeP {
@@ -136,7 +143,7 @@ a.sizeP {
 
 .mainW {
     background: white;
-    padding-top: 70px;
+    padding-top: 120px;
     padding-bottom: 75px;
 }
 

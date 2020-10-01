@@ -2,7 +2,16 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+
     <!--<link href="{{ asset('css/all.css') }}" rel="stylesheet">-->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJSXG6Q');</script>
+<!-- End Google Tag Manager -->
+
     <link href="css/estilos.css" rel="stylesheet">
     <link href="css/estilos2.css" rel="stylesheet">
     {{-- 
@@ -18,6 +27,10 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSXG6Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header class="">
         <div class="container-fluid header">
             <div class="row">
@@ -29,7 +42,9 @@
                     <a class="navFont" href="{{ route('inicio') }}#instrucciones">Instrucciones</a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 logo" style="bottom: 14px;">
-                    <img class="img-fluid" src="img/logoP6.png" />
+                <a href="/">
+                <img class="img-fluid" src="img/logoP6.png" />
+                </a>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
                     <a class="navFont" href="{{ route('inicio') }}#venderNota">Vender nota</a>
@@ -46,7 +61,10 @@
                     <p class="navFont">Instrucciones</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 logo" style="bottom: 14px;">
-                    <img class="img-fluid" src="img/logoP6.png" />
+                <a href="/">
+                <img class="img-fluid" src="img/logoP6.png" />
+                </a>
+                    
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 pt-4 text-center">
                     <a class="navFont" href="{{ route('venderNota') }}">Vender nota</a>

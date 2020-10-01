@@ -8,6 +8,11 @@
     src: url("../Fonts/Abadi\ mtstd-bold-opentype.otf");
 }
 
+@font-face {
+    font-family: "Abadi mtstd-light";
+    src: url("../Fonts/Abadi\ mtstd-light.otf");
+}
+
 
 /*Cabecera ->*/
 
@@ -90,25 +95,28 @@ div.dropdown div.dropdown-content {
 
 /*Letras --> */
 
+
 h1#titlePrin {
-    font-size: 60px;
+    font-size: 5em;
     font-weight: bold;
-    line-height: 60px;
-    font-family: "Abadi mtstd";
+    line-height: 80px;
+    font-family: "Abadi bold";
 }
 
 .boldSize {
     font-size: 22px;
     font-weight: bold;
+    font-family: "Abadi bold";
 }
 
 .sizeP {
-    font-size: 21px;
-    font-family: "Abadi mtstd";
+    font-size: 2em;
+    line-height: 40px;
+    font-family: "Abadi mtstd-light";
 }
 
 a.sizeP {
-    font-size: 15px;
+    font-size: 1.5em;
     text-decoration: revert;
 }
 
@@ -120,7 +128,6 @@ a.sizeP {
 
 .ubiFont {
     padding-left: 30px;
-    text-align: justify;
 }
 
 .parte1 {
@@ -136,7 +143,7 @@ a.sizeP {
 
 .mainW {
     background: white;
-    padding-top: 70px;
+    padding-top: 120px;
     padding-bottom: 75px;
 }
 
@@ -165,8 +172,10 @@ div#contactanos {
     padding-right: 30px;
     padding-bottom: 20px;
     padding-left: 30px;
+    margin-left: 30px;
     padding-top: 20px;
     font-weight: bold;
+    font-size: 1.5em;
 }
 
 .btnIni {
