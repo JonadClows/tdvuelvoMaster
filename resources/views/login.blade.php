@@ -16,9 +16,12 @@
             <div id="login">
                 <form method="POST" action="{{ route('login') }}" class="pt-5">
                     @csrf
-                    <input type="text" name="email" placeholder="Email" required/><br>
-                    <input type="password" name="password" placeholder="Contraseña" required/>
-                    <div class="text-right"><a class="btn btn-link" href="{{ route('resetPass') }}">* Olvide mi contraseña</a></div><br><br>
+                    <input type="text" name="email" placeholder="Email" required /><br>
+                    <input type="password" name="password" placeholder="Contraseña" required />
+                    <div class="text-right">
+                        <a class="btn btn-link" href="{{ route('resetPass') }}"
+                            style="text-decoration: none; color: #878787;">* Olvide mi contraseña</a>
+                    </div><br><br>
                     <input class="fondoAzul" type="submit" value="Enviar" />
                 </form>
             </div>

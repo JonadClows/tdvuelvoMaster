@@ -41,7 +41,6 @@ class MailController extends Controller
             'contactEmail' => 'required|email',
         ]);
         $user = User::where('email','=',$request->contactEmail)->first();
-        //$user = User::find($request->contactEmail);
         
         if ($user->email == null) {
             return response()->json([
@@ -55,10 +54,11 @@ class MailController extends Controller
             $user->remember_token= $token;
             $user->save();
 
-            $enlace = 'http://tdvuelvomaster.test/restablecerPass/'. $token;
+            $enlace = 'https://tdvuelvo.com/restablecerPass/'. $token;
             try {
                 // Envía el email
-                Mail::to('a4a1d95c08-04c020@inbox.mailtrap.io')//$request->contactEmail)
+                //Mail::to('a4a1d95c08-04c020@inbox.mailtrap.io')//$request->contactEmail)
+                Mail::to($request->contactEmail)
                     ->send(new ResetPass($enlace));
             }catch(\Exception $e) {
                 $message = 'No se ha podido contactar con el servidor, por favor, intente más tarde.';

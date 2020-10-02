@@ -91,7 +91,7 @@
                         correspodiente.
                     </p>
                     <label>MONTO DE NOTA</label>
-                    <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2" />
+                    <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2" onKeyPress="return soloNumeros(event)"/>
                     <label>DESCUENTO %</label>
                     <input type="text" name="txtComision" id="txtComision" class="txtPart2" readonly />
                     <label>TOTAL A RECIBIR</label>

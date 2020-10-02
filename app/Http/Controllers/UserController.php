@@ -125,16 +125,13 @@ class UserController extends Controller
             'password' => 'required|min:6',
         ];
         
-        //$this->validate(request(), ['password' => 'required|min:6|confirmed',]);
         $request->validate($rules);
 
-        //$user = User::find($id);
         $user = User::find($request->id);
         
         if ($user->id != null) {
 
             $user->fill([
-                //'password' => Hash::make(request()->get('password')),
                 'password' => Hash::make($request->password),
             ])->save();
 

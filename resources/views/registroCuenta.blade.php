@@ -39,8 +39,8 @@
                             @endforeach
                         </select>
                     </div>
-                    <input type="text" name="identificacion" id="identificacion" placeholder="C.I./ Ruc" value="{{ !is_null($cuenta) ? $cuenta->identificacionTitular : '' }}" />
-                    <input type="text" name="nroCta" id="nroCta" placeholder="Numero de cuenta" value="{{ !is_null($cuenta) ? $cuenta->numero : '' }}" />
+                    <input type="text" name="identificacion" id="identificacion" placeholder="C.I./ Ruc" value="{{ !is_null($cuenta) ? $cuenta->identificacionTitular : '' }}" onKeyPress="return soloNumeros(event)"/>
+                    <input type="text" name="nroCta" id="nroCta" placeholder="Numero de cuenta" value="{{ !is_null($cuenta) ? $cuenta->numero : '' }}" maxlength="20" onKeyPress="return soloNumeros(event)" />
                     <input type="text" name="nombreCompleto" id="nombreCompleto" placeholder="Nombre y Apellido" value="{{ !is_null($cuenta) ? $cuenta->nombreTitular : '' }}" />
                     
                     <div class="row mt-4">

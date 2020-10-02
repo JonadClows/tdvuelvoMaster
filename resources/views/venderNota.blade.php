@@ -16,7 +16,7 @@
                             <div class="col-6">
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <input type="text" name="txtMontoNota" id="txtMontoNota" placeholder="MONTO DE NOTA DE CRÉDITO" />
+                                        <input type="text" name="txtMontoNota" id="txtMontoNota" placeholder="MONTO DE NOTA DE CRÉDITO" onKeyPress="return soloNumeros(event)"/>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="calculatedValue w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-                                            <p class="label text-center">COMISIÓN</p>
+                                            <p class="label text-center">DESCUENTO %</p>
                                             <input type="text" name="comisionVN" id="txtComision" class="value text-center mr-1 ml-1" style="border: 0;width: 220px;" value="0%" readonly/>
                                         </div>
                                     </div>

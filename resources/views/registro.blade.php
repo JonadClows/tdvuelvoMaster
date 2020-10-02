@@ -31,7 +31,7 @@
             @endguest
                     @csrf
                     @guest
-                        <input type="text" id="name" name="name" placeholder="Nombre y Apellido" />
+                        <input type="text" id="name" name="name" placeholder="Nombre y Apellido" maxlength="20"/>
                         <input type="text" id="cedula" name="cedula" placeholder="C.I./ Ruc" maxlength="10" onKeyPress="return soloNumeros(event)" />
                         <input type="email" id="email" name="email" placeholder="Correo electrónico" />
                         <input type="text" id="telefono" name="telefono" placeholder="Número telefónico (Opcional)" maxlength="10" onKeyPress="return soloNumeros(event)" />
@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col-md-6 pl-4" style="left: 28px;">
                                 <div class="input-group-append">
-                                    <input class="fondoAzul" type="submit" onclick="valCedula()" value="Confirmar" />
+                                    <input class="fondoAzul" type="submit" onclick="" value="Confirmar" />
                                 </div>
                             </div>
                             <div class="col-md-6 pl-4" style="right: 42px;bottom: 10px;">
