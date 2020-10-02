@@ -203,12 +203,13 @@ $('#frmUpdatePassByEmail').on('submit', function(event) {
     // Empaquetar los datos
     const data = {
         password: $('#password').val(),
+        id: $('#user_id').val(),
     }
 
     validateAndSend(
         form,
         data,
-        '/updatePassByEmail/{id}',
+        '/updatePassByEmail',
         Object.values(data).some((value) => value == ''),
         function() {
             location.href = '/home';

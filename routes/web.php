@@ -65,7 +65,7 @@ Route::post('/contacto', [MailController::class, 'contactMail'])->name('contacto
 Route::post('/recuperar-clave', [MailController::class, 'resetPass'])->name('resetPassEmail');
 
 Route::get('/restablecerPass/{token}',[UserController::class, 'updatePassByEmail']);
-Route::put('/updatePassByEmail/{id}',[UserController::class, 'cambiarPassByEmail']);
+Route::post('/updatePassByEmail',[UserController::class, 'cambiarPassByEmail']);
 
 
 Route::get('/registro',[UserController::class, 'getDatosGeo'])->name('registro');

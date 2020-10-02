@@ -14,10 +14,9 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 align-self-center">
             <div id="register" style="height: 295px;padding-top: 30px;">
-                <form action="/updatePassByEmail/{{$user_id}}" method="POST">
-                    @method('PUT')
+                <form id="frmUpdatePassByEmail" action="" method="POST">
                     @csrf
-
+                    <input type="hidden" name="user_id" id="user_id" value="{{$user_id}}">
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                         name="password" placeholder="Nueva contraseña" required autocomplete="new-password"
                         style="height: 65px;">

@@ -119,16 +119,23 @@ class UserController extends Controller
         
     }
 
-    public function cambiarPassByEmail($id) {
-        
-        $this->validate(request(), ['password' => 'required|min:6',]);
+    public function cambiarPassByEmail(Request $request) {
 
-        $user = User::find($id);
+        $rules = [
+            'password' => 'required|min:6',
+        ];
+        
+        //$this->validate(request(), ['password' => 'required|min:6|confirmed',]);
+        $request->validate($rules);
+
+        //$user = User::find($id);
+        $user = User::find($request->id);
         
         if ($user->id != null) {
 
             $user->fill([
-                'password' => Hash::make(request()->get('password')),
+                //'password' => Hash::make(request()->get('password')),
+                'password' => Hash::make($request->password),
             ])->save();
 
             return response()->json([
@@ -137,7 +144,7 @@ class UserController extends Controller
             ]);
         } else {
             return response()->json([
-                'success' => true,
+                'success' => false,
                 'message' => 'Ocurrió un error al actualizar su contraseña, vuelva a intentar.',
             ]);
         }
