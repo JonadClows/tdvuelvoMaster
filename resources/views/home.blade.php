@@ -61,7 +61,7 @@
                 allowfullscreen></iframe>
         </div>
     </div>
-    <div id="venderNota" class="row mainC">
+    <div id="venderNota" class="row mainC" style="padding-bottom: 40px;">
         <div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 50px;">
             <div class="row pl-3 pt-5" id="">
                 <div class="col-sm-10">
@@ -108,7 +108,7 @@
             </div>
         </div>
     </div>
-    <div id="contactanos" class="row text-center colorContact" tabindex="-1" style="outline: none; padding-bottom: 40px;">
+    <div id="contactanos" class="row text-center colorContact" tabindex="-1" style="outline: none;">
         <div class="col-md-12">
             <h1>Sigue estos tres pasos</h1>
             <!--<img src="vender2.svg" />-->
