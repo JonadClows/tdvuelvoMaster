@@ -27,11 +27,7 @@ Route::middleware(['auth'])->group(function (){
 
     Route::put('/updatePass',[UserController::class, 'updatePass']);
 
-    //Route::get('/cambiaPass',[UserController::class, 'getDatosGeo'])->name('registro');
-
-    Route::get('/cambiaPass', function () {
-        return view('cambiarPass');
-    })->name('cambiaPass');
+    Route::get('/cambiaPass', function () {return view('cambiarPass');})->name('cambiaPass');
 });
 
 Route::get('/', function () {
@@ -47,6 +43,12 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+Route::get('/cambiarPass', function () {
+    return view('cambiarPassByEmail');
+})->name('cambiarPassByEmail');
+
+Route::get('/resetPass', function () {return view('resetPass');})->name('resetPass');
+
 /*
 Route::get('/registro', function () {
     return view('registro');
@@ -60,6 +62,11 @@ Route::get('/vender-nota', [NotaController::class, 'venderNota'])->name('venderN
 Route::post('/vender-nota', [NotaController::class, 'saveNota'])->name('guardarNota');
 
 Route::post('/contacto', [MailController::class, 'contactMail'])->name('contacto');
+Route::post('/recuperar-clave', [MailController::class, 'resetPass'])->name('resetPassEmail');
+
+Route::get('/restablecerPass/{token}',[UserController::class, 'updatePassByEmail']);
+Route::put('/updatePassByEmail/{id}',[UserController::class, 'cambiarPassByEmail']);
+
 
 Route::get('/registro',[UserController::class, 'getDatosGeo'])->name('registro');
 

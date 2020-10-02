@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use App\Mail\Contacto;
+use App\Mail\ResetPass;
+use App\Models\User;
 
 class MailController extends Controller
 {
@@ -29,5 +33,47 @@ class MailController extends Controller
             'success' => $ok,
             'message' => $message,
         ]);
+    }
+
+    public function resetPass(Request $request) {
+        
+        $request->validate([
+            'contactEmail' => 'required|email',
+        ]);
+        $user = User::where('email','=',$request->contactEmail)->first();
+        //$user = User::find($request->contactEmail);
+        
+        if ($user->email == null) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Su correo no se encuentra en nuestros registros, vuelva a intentarlo.',
+            ]);
+        } else {
+            $ok = true;
+            $message = 'Se envió un enlace a tu correo para reestablecer contraseña.';
+            $token = $this->generaTokenSeguro(20);
+            $user->remember_token= $token;
+            $user->save();
+
+            $enlace = 'http://tdvuelvomaster.test/restablecerPass/'. $token;
+            try {
+                // Envía el email
+                Mail::to('a4a1d95c08-04c020@inbox.mailtrap.io')//$request->contactEmail)
+                    ->send(new ResetPass($enlace));
+            }catch(\Exception $e) {
+                $message = 'No se ha podido contactar con el servidor, por favor, intente más tarde.';
+                $ok = false;
+            }
+
+            return response()->json([
+                'success' => $ok,
+                'message' => $message,
+            ]);
+        }
+    }
+
+    private function generaTokenSeguro($longitud)
+    {
+        return bin2hex(random_bytes(($longitud - ($longitud % 2)) / 2));
     }
 }

@@ -106,5 +106,42 @@ class UserController extends Controller
 
         return redirect('miperfil');
     }
+
+    public function updatePassByEmail($token) {
+        
+        $user = User::where('remember_token','=',$token)->first();
+        //$user = User::find();
+        if ($user->remember_token != null){
+            return view('cambiarPassByEmail', ['user_id' => $user->id]);
+        } else {
+            return redirect('home');
+        }
+        
+    }
+
+    public function cambiarPassByEmail($id) {
+        
+        $this->validate(request(), ['password' => 'required|min:6',]);
+
+        $user = User::find($id);
+        
+        if ($user->id != null) {
+
+            $user->fill([
+                'password' => Hash::make(request()->get('password')),
+            ])->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Su contraseña se actualizó correctamente.',
+            ]);
+        } else {
+            return response()->json([
+                'success' => true,
+                'message' => 'Ocurrió un error al actualizar su contraseña, vuelva a intentar.',
+            ]);
+        }
+    }
+
 }
 

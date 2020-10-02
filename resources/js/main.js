@@ -53,9 +53,9 @@ $("#txtMontoNota").bind("change paste keyup", function() {
         $("#txtComision").val(descuento);
         $("#txtTotalRecibir").val(
             (
-                totalRecibir=='-'
-                    ? totalRecibir
-                    : "$" + totalRecibir.toFixed(0)
+                totalRecibir == '-' ?
+                totalRecibir :
+                "$" + totalRecibir.toFixed(0)
             )
         );
     } else {
@@ -162,4 +162,42 @@ $("#montoVN").bind("change paste keyup", function() {
         $("#txtComision").val('');
         $("#txtTotalRecibir").val('');
     }
+});
+
+
+$('#frmResetPass').on('submit', function(event) {
+    event.preventDefault();
+    const form = $(this);
+
+    // Empaquetar los datos
+    const data = {
+        contactEmail: $('#contactEmail').val(),
+    }
+
+    validateAndSend(
+        form,
+        data,
+        '/recuperar-clave',
+        Object.values(data).some((value) => value == '')
+    );
+});
+
+$('#frmUpdatePassByEmail').on('submit', function(event) {
+    event.preventDefault();
+    const form = $(this);
+
+    // Empaquetar los datos
+    const data = {
+        password: $('#password').val(),
+    }
+
+    validateAndSend(
+        form,
+        data,
+        '/updatePassByEmail/{id}',
+        Object.values(data).some((value) => value == ''),
+        function() {
+            location.href = '/home';
+        }
+    );
 });
