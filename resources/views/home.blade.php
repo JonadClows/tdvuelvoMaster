@@ -18,7 +18,7 @@
             </div>
             <div class="row pl-3 pt-4">
                 <div class="col-lg-7 col-md-8 col-sm-4 mt-3">
-                    <a id="" class="btnCrearCuenta btnC" href="http://tdvuelvomaster.test/registro">Crea tu cuenta</a>
+                    <a id="" class="btnCrearCuenta btnC" href="{{ route('registro') }}">Crea tu cuenta</a>
                 </div>
                 <div class="col-lg-5 col-md-4 col-sm-4 text-left">
                     <a class="colorC sizeP" href="#contactanos">Contáctate con nosotros</a>
