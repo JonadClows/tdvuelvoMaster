@@ -42,7 +42,7 @@ class MailController extends Controller
         ]);
         $user = User::where('email','=',$request->contactEmail)->first();
         
-        if ($user->email == null) {
+        if ($user == null) {
             return response()->json([
                 'success' => false,
                 'message' => 'Su correo no se encuentra en nuestros registros, vuelva a intentarlo.',
