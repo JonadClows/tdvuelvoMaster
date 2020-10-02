@@ -51,13 +51,18 @@
             </div>
         </div>
         <div class="col-lg-7 col-md-12 col-sm-12 pl-0 parte1  text-center">
-            <!--<iframe width="682" height="405" src="img/videoVenderNota.mp4" style="padding-bottom: 21px;" frameborder="0" allowfullscreen autoplay></iframe>-->
+            <!--<iframe width="682" height="405" src="img/videoVenderNota.mp4" style="padding-bottom: 21px;" frameborder="0" allowfullscreen autoplay></iframe>
             <iframe width="569" height="345" src="img/videoVenderNota.mp4"
-                style="padding-bottom: 25px; margin-top: 70px;" frameborder="0" allowfullscreen></iframe>
+                style="padding-bottom: 25px; margin-top: 70px;" frameborder="0" allowfullscreen></iframe>-->
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/j6KEsQoz3AY"
+                style="padding-bottom: 25px; margin-top: 70px;" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </div>
     <div id="venderNota" class="row mainC">
-        <div class="col-lg-6 col-md-6 col-sm-12 parte1  ">
+        <div class="col-lg-6 col-md-6 col-sm-12" style="margin-top: 50px;">
             <div class="row pl-3 pt-5" id="">
                 <div class="col-sm-10">
                     <h1 class="colorW text-left ubiFont" id="titlePrin">VENDE TU NOTA DE CRÉDITO</h1>
@@ -91,7 +96,8 @@
                         correspodiente.
                     </p>
                     <label>MONTO DE NOTA</label>
-                    <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2" onKeyPress="return soloNumeros(event)"/>
+                    <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2"
+                        onKeyPress="return soloNumeros(event)" />
                     <label>DESCUENTO %</label>
                     <input type="text" name="txtComision" id="txtComision" class="txtPart2" readonly />
                     <label>TOTAL A RECIBIR</label>
@@ -102,7 +108,7 @@
             </div>
         </div>
     </div>
-    <div id="contactanos" class="row text-center colorContact" tabindex="-1" style="outline: none;">
+    <div id="contactanos" class="row text-center colorContact" tabindex="-1" style="outline: none; padding-bottom: 40px;">
         <div class="col-md-12">
             <h1>Sigue estos tres pasos</h1>
             <!--<img src="vender2.svg" />-->

@@ -95,7 +95,6 @@ div.dropdown div.dropdown-content {
 
 /*Letras --> */
 
-
 h1#titlePrin {
     font-size: 5em;
     font-weight: bold;
@@ -143,7 +142,7 @@ a.sizeP {
 
 .mainW {
     background: white;
-    padding-top: 120px;
+    /* padding-top: 120px;*/
     padding-bottom: 75px;
 }
 
