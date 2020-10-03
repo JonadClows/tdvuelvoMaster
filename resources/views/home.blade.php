@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('seccionPrincipal')
 <div class="container-fluid">
-    <div id="empresa" class="row mainW">
+    <div id="empresa" class="row mainW" style="padding-top: 45px;">
         <div class="col-lg-6 col-md-6 col-sm-6 parte1 ">
             <div class="row pl-3" id="">
                 <div class="col-md-8 ">
