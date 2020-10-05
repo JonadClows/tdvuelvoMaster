@@ -173,10 +173,27 @@
             <div class="row justify-content-md-center">
                 <form id="frmContacto" action="/contacto" method="POST">
                     <div id="contact" class=" input-group mb-3 ">
-                        <input type="hidden" name="_token" value="TPE4cAkQs9KbUK2rSiG6OLrOWLkHyHUrnxU6NG9R"> <input
-                            type="text" name="contactEmail" id="contactEmail" class="form-control"
+                    @csrf
+                        <div class="btn-group dropup">
+                            <select name="asunto" id="asunto" class="btn btn-info dropdown-toggle text-center fondoAzul" style="width: 115px;">
+                                <option hidden>Asunto</option>
+                                <option value="Información empresa">Quiero saber más de la empresa.</option>
+                                <option value="Cotización personalizada">Tengo una cotización personalizada.</option>
+                                <option value="Información devolución">Quiero información para hacer el trámite de la
+                                    devolución con ustedes.</option>
+                                <option value="Cambio Devolución a N/C">Tengo una devolución en cuenta y quiero cambiar
+                                    a nota de crédito.</option>
+                                <option value="N/C Cartular">Tengo una nota de crédito cartular.</option>
+                                <option value="Inconveniente en venta de nota">No puedo completar la venta de la nota.
+                                </option>
+                                <option value="Otras">Otras.</option>
+                            </select>
+                        </div>
+
+                        <input type="text" name="contactEmail" id="contactEmail" class="form-control"
                             placeholder="Correo electrónico" aria-label="Recipient's username"
                             aria-describedby="basic-addon2">
+
                         <div class="input-group-append fondoAzul">
                             <button class="btn btn-outline-secondary" type="submit"
                                 style="color: white;">Enviar</button>

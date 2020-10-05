@@ -21,16 +21,17 @@ class CuentaBancariaController extends Controller
 
     public function formRegistro($id=0)
     {
-        $cuenta = null;
-        if ($id!=0) {
-            $cuenta = Cuenta::where('id', '=', $id)->first();
-        }
+        $user_id = \Auth::user()->id;
+        //$cuenta = null;
+        //if ($id!=0) {
+            $cuenta = Cuenta::where('user_id', '=', $user_id)->first();
+        //}
         return view(
             'registroCuenta',
             [
                 'bancos' => $this->bancos,
                 'tiposCta' => $this->tiposCta,
-                'id' => $id,
+                'id' => $user_id,
                 'cuenta' => $cuenta,
             ]
         );

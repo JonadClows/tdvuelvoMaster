@@ -15,29 +15,32 @@
             <div id="register" class="pt-4">
                 @csrf
                 <input type="text" name="name" placeholder="Nombre y Apellido" class="mt-1"
-                    value="{{ Auth::user()->name }}" disabled/>
-                <input type="text" name="cedula" placeholder="C.I./ Ruc"
-                    value="{{ Auth::user()->cedula }}" disabled/>
-                <input type="email" name="email" placeholder="Correo electrónico"
-                    value="{{ Auth::user()->email }}" disabled/>
+                    value="{{ Auth::user()->name }}" disabled />
+                <input type="text" name="cedula" placeholder="C.I./ Ruc" value="{{ Auth::user()->cedula }}" disabled />
+                <input type="email" name="email" placeholder="Correo electrónico" value="{{ Auth::user()->email }}"
+                    disabled />
                 <input type="text" name="telefono" placeholder="Número telefónico (Opcional)"
-                    value="{{ Auth::user()->telefono }}" disabled/>
+                    value="{{ Auth::user()->telefono }}" disabled />
                 <input type="text" name="telefono" placeholder="Provincia, Ciudad" class="text-capitalize"
-                    value="{{ $nameProvincia }}, {{ $nameCanton }}" disabled/>
-                <input type="text" name="telefono" placeholder="Aún no tienes una cuenta de banco registrada"
-                    value="" disabled/>
+                    value="{{ $nameProvincia }}, {{ $nameCanton }}" disabled />
+                    @if (sizeof($cuentas)==0)
+                    <input type="text" name="telefono" placeholder="Aún no tienes una cuenta de banco registrada" value=""
+                    disabled />
+                    @else
+                    <input type="text" name="telefono" placeholder="Ya tienes una cuenta de banco registrada" value=""
+                    disabled />
+                        @endif
+                
+                <input type="hidden" name="btnSellNoteOp" id="btnSellNoteOp" class="{{ (sizeof($cuentas)==0 ? 'disabled' : 'enable') }}"/>
                 <div class="row">
                     <div class="col-lg-12 mt-3">
-                        <button
-                            id="btnSellNote"
-                            style="width: 80%"
-                            class="fondoBtn btn btn-outline-secondary btn-block py-2 m-auto {{ (sizeof($cuentas)==0 ? 'disabled' : '') }}"
-                            data-url="{{ url('vender-nota') }}"
-                        >
+                        <button id="btnSellNote" style="width: 80%"
+                            class="fondoBtn btn btn-outline-secondary btn-block py-2 m-auto {{ (sizeof($cuentas)==0 ? 'enable' : '') }}"
+                            data-url="{{ url('vender-nota') }}">
                             Vender Nota
                         </button>
                         @if (sizeof($cuentas)==0)
-                            <p class="text-center mt-2">No tiene cuentas registradas</p>
+                        <p class="text-center mt-2">No tiene cuentas registradas</p>
                         @endif
                     </div>
                 </div>

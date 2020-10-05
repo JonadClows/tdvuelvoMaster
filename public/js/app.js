@@ -224,18 +224,19 @@ $('#frmContacto').on('submit', function(event) {
     // Empaquetar los datos
     const data = {
         contactEmail: $('#contactEmail').val(),
+        asunto: $('#asunto').val(),
     }
 
     validateAndSend(
         form,
         data,
         '/contacto',
-        Object.values(data).some((value) => value=='')
+        Object.values(data).some((value) => value == '')
     );
 });
 
 // Form registrar cuenta bancaria
-$('#frmRegistroCuenta').on('submit', function(event){
+$('#frmRegistroCuenta').on('submit', function(event) {
     event.preventDefault();
     const form = $(this);
 
@@ -253,8 +254,8 @@ $('#frmRegistroCuenta').on('submit', function(event){
         form,
         data,
         '/registrar-cuenta',
-        Object.values(data).some((value) => value==''),
-        function() { location.href = '/miperfil'; }
+        Object.values(data).some((value) => value == ''),
+        function() { location.href = '/informacion-perfil'; }
     );
 });
 
@@ -278,12 +279,12 @@ $('#frmRegistroUsuario').on('submit', function(event) {
         data,
         form.attr('action'),
         (
-            data.cedula == ''
-            || data.name == ''
-            || data.id_ciudad == ''
-            || data.email == ''
-            || data.password == ''
-            || data.password_confirmation == ''
+            data.cedula == '' ||
+            data.name == '' ||
+            data.id_ciudad == '' ||
+            data.email == '' ||
+            data.password == '' ||
+            data.password_confirmation == ''
         ),
         function() { location.href = '/informacion-perfil'; }
     );
@@ -308,10 +309,10 @@ $('#frmEditarUsuario').on('submit', function(event) {
         data,
         form.attr('action'),
         (
-            data.cedula == ''
-            || data.name == ''
-            || data.id_ciudad == ''
-            || data.email == ''
+            data.cedula == '' ||
+            data.name == '' ||
+            data.id_ciudad == '' ||
+            data.email == ''
         ),
         function() { location.href = '/informacion-perfil'; }
     );
@@ -323,9 +324,9 @@ $('#frmVenderNota').on('submit', function(event) {
     const form = $(this);
 
     // Empaquetar los datos
-    const monto = parseFloat( $('#txtMontoNota').val() );
-    const valorNeto = parseFloat( $('#txtTotalRecibir').val().trim().replaceAll('$','').replaceAll(',','.') );
-    const comision = parseFloat( $('#txtComision').val().trim().replaceAll('$','').replaceAll(',','.') );
+    const monto = parseFloat($('#txtMontoNota').val());
+    const valorNeto = parseFloat($('#txtTotalRecibir').val().trim().replaceAll('$', '').replaceAll(',', '.'));
+    const comision = parseFloat($('#txtComision').val().trim().replaceAll('$', '').replaceAll(',', '.'));
     const data = {
         monto: monto,
         nombreTitular: $('#txtNombreTitular').val(),
@@ -339,11 +340,11 @@ $('#frmVenderNota').on('submit', function(event) {
         data,
         '/vender-nota',
         (
-            data.monto == 0
-            || data.nombreTitular == ''
-            || data.apellidoTitular == ''
-            || data.valorNeto == 0
-            || data.comision == 0
+            data.monto == 0 ||
+            data.nombreTitular == '' ||
+            data.apellidoTitular == '' ||
+            data.valorNeto == 0 ||
+            data.comision == 0
         ),
         function() { location.href = '/miperfil'; }
     );
@@ -360,13 +361,13 @@ $('#linkRegistrarCuenta').on('click', function(event) {
 
 
 // Botón vender nota
-$('#btnSellNote').on('click', function(event){
+$('#btnSellNote').on('click', function(event) {
     event.preventDefault();
     const me = $(this);
-    if (me.hasClass('disabled')) {
+    if ($('#btnSellNoteOp').hasClass('disabled')) {
         const dialog = $('#modalDialog');
         dialog.off('hidden.bs.modal')
-            .on('hidden.bs.modal', function(e){
+            .on('hidden.bs.modal', function(e) {
                 location.href = 'registrar-cuenta';
             });
         alerta('<h5>¡Importante!</h5>Debes registrar tu cuenta bancaria antes de vender una nota.');
@@ -391,9 +392,9 @@ function validateAndSend(form, data, url, validationFailed, onCloseSuccessDialog
         });
         const dialog = $('#modalDialog');
         $.post(url, data)
-            .done(function(response){
+            .done(function(response) {
                 dialog.off('hidden.bs.modal')
-                    .on('hidden.bs.modal', function(e){
+                    .on('hidden.bs.modal', function(e) {
                         form.trigger('reset');
                         dialog.off('hidden.bs.modal');
                         if (onCloseSuccessDialog) {
@@ -402,14 +403,14 @@ function validateAndSend(form, data, url, validationFailed, onCloseSuccessDialog
                     });
                 alerta(response.message || 'Datos almacenados satisfactoriamente.');
             })
-            .fail(function(response){
+            .fail(function(response) {
                 let detail = response.responseJSON.message;
                 if (response.responseJSON.errors != undefined) {
                     detail = Object.values(response.responseJSON.errors).reduce((a, b) => a + '<br>' + b);
                 }
                 alerta('Algo no ha salido bien:<br> ' + detail);
             })
-            .always(function(){
+            .always(function() {
                 form.toggleClass('busy');
                 form.find(':input').prop("disabled", false);
             });

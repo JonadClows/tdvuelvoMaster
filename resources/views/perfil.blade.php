@@ -142,7 +142,7 @@
                             <div class="col-lg-12 mt-4 mb-3">
                                 <button
                                     id="btnSellNote"
-                                    class="fondoBtn btn btn-outline-secondary btn-block {{ (sizeof($cuentas)==0 ? 'disabled' : '') }}"
+                                    class="fondoBtn btn btn-outline-secondary btn-block {{ (sizeof($cuentas)==0 ? 'enable' : '') }}"
                                     data-url="{{ url('vender-nota') }}"
                                 >
                                     Vender Nota

@@ -22,8 +22,21 @@ class MailController extends Controller
 
         try {
             // Envía el email
-            Mail::to('info@tdvuelvo.com')
-                ->send(new Contacto($request->contactEmail));
+            /*Mail::to('info@tdvuelvo.com')
+                ->send(new Contacto($request->contactEmail));*/
+                $data = [
+                    'userEmail' => $request->contactEmail
+                ];
+                $email = 'info@tdvuelvo.com';
+                $asunto = $request->asunto;
+
+               Mail::send('mail.contacto', $data, function($message) use ($email,$asunto){
+                    //$message->from(env('MAIL_FROM_ADDRESS'));
+                    $message->to($email);
+                    $message->subject($asunto);
+                });
+
+
         }catch(\Exception $e) {
             $message = 'No se ha podido contactar con el servidor, por favor, intente más tarde.';
             $ok = false;
@@ -58,8 +71,21 @@ class MailController extends Controller
             try {
                 // Envía el email
                 //Mail::to('a4a1d95c08-04c020@inbox.mailtrap.io')//$request->contactEmail)
-                Mail::to($request->contactEmail)
-                    ->send(new ResetPass($enlace));
+                /* Mail::to($request->contactEmail)
+                    //->subject('Reestablecer contraseña')
+                    ->send(new ResetPass($enlace));*/
+
+                    $data = [
+                        'enlace' => $enlace
+                    ];
+                    $email = $request->contactEmail;
+
+                   Mail::send('mail.resetPass', $data, function($message) use ($email){
+                        //$message->from(env('MAIL_FROM_ADDRESS'));
+                        $message->to($email);
+                        $message->subject('Reestablecer contraseña');
+                    });
+
             }catch(\Exception $e) {
                 $message = 'No se ha podido contactar con el servidor, por favor, intente más tarde.';
                 $ok = false;
