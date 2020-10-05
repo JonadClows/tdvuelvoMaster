@@ -148,14 +148,16 @@
                     <p class="text-center colorW letraFooter">Respaldado por LEXTAX, GRUPO LINK Y STUPENDO. </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 ">
-                    <div class="socialSimple text-right mr-4 mt-4">
-                        <a class="mr-2" id="" title="LinkedIn" href="" target="_blank"><img src="img/logo_in.png"></a>
-                        <a class="mr-1" id="" title="Connect with us on facebook" href=""><img
-                                src="img/logo_facebook.png"></a>
+                    <div class="text-right mr-4 mt-4">
+                        <a class="mr-2" id="" title="LinkedIn" href="" target="_blank"><img style="visibility: hidden;"
+                                src="img/linkedin.png"></a>
                         <a class="mr-1" id="" title="Follow us on Twitter" href="" target="_blank"><img
-                                src="img/logo_twitter.png"></a>
-                        <a class="mr-1" id="" title="Instagram" href="" target="_blank"><img
-                                src="img/logo_insta.png"></a>
+                                style="visibility: hidden;" src="img/twitter.png"></a>
+                        <a class="mr-1" id="" title="Connect with us on facebook"
+                            href="https://www.facebook.com/TD-Vuelvo-105310731323396/"><img src="img/facebook.png"></a>
+                        <a class="mr-1" id="" title="Instagram"
+                            href="https://instagram.com/tdvuelvo?igshid=44hvyevb9grr" target="_blank"><img
+                                src="img/instagram.png"></a>
                     </div>
                 </div>
             </div>
