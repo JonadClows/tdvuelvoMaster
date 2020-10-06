@@ -1,3 +1,5 @@
+@import './fonts';
+
 // ----------------------------------------------------------------------------
 // Mixin para botones
 // ----------------------------------------------------------------------------
@@ -230,20 +232,47 @@ form {
     border-bottom-right-radius: 10px;
 
     a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-
-    &:hover {
-        background-color: #42a6c6;
-        text-decoration: none;
         color: white;
-    }
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
 
-    &:last-child:hover {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        &:hover {
+            background-color: #42a6c6;
+            text-decoration: none;
+            color: white;
+        }
+
+        &:last-child:hover {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
     }
+}
+
+
+// ----------------------------------------------------------------------------
+// Mensajes de error centrados
+// ----------------------------------------------------------------------------
+.invalid-feedback {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+// ----------------------------------------------------------------------------
+// Controles del formulario de cambio de password
+// ----------------------------------------------------------------------------
+.cambiarPass {
+    .form-control:invalid {
+        padding-left: unquote("calc(1.5em + .75rem)");
     }
+}
+
+// ----------------------------------------------------------------------------
+// Fix para que muestre todo el contenido
+// ----------------------------------------------------------------------------
+body {
+    padding-bottom: 100px;
 }

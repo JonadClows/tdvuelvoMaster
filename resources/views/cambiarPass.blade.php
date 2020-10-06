@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('seccionPrincipal')
-<div id="registro" class="container-fluid espacio" style="display: block;">
+<div id="registro" class="container-fluid espacio cambiarPass" style="display: block;">
     <div class="row pt-5">
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <label class="register">CAMBIAR CONTRASEÑA</label>

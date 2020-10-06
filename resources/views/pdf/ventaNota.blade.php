@@ -21,14 +21,13 @@
             </tr>
             <tr>
                 <td style="text-align: justify;">
-                    <p style="text-align: justify;font-size: 13px;">Por medio del presente acuerdo, {{ $endosante }}
-                        usuario de TDVUELVO, identificado con la (cédula o RUC) número {{ $cedula }}, en calidad de
-                        ENDOSANTE se compromete a endosar ésta nota de crédito desmaterializada a favor de LEXTAX
-                        SERVICIOS TRIBUTARIOS INTEGRALES S.A. quién actúa en calidad de ENDOSATARIO; y quién a su vez se
-                        compromete al pago del valor expresado en el portal TDVUELVO, identificado como “VALOR NETO A
-                        RECIBIR”, en su cuenta de {{ $tipoCta }} (ahorros o corriente) número {{ $numeroCta }}, del
-                        {{ $bancoCta }}, valor que es aceptado a entera satisfacción tanto por el ENDOSATARIO como por
-                        el ENDOSANTE.</p>
+                    <p style="text-align: justify;font-size: 13px;">Por medio del presente acuerdo, {{ $endosante }}, 
+                        identificado con la (cédula o RUC) número {{ $cedula }}, en calidad de ENDOSANTE se compromete 
+                        a endosar ésta nota de crédito desmaterializada a favor de LEXTAX SERVICIOS TRIBUTARIOS INTEGRALES S.A. 
+                        quién actúa en calidad de ENDOSATARIO; y quién a su vez se compromete al pago del valor expresado 
+                        en el portal TDVUELVO, identificado como “VALOR NETO A RECIBIR”, en su cuenta de {{ $tipoCta }} 
+                        número {{ $numeroCta }}, del {{ $bancoCta }}, valor que es aceptado a entera 
+                        satisfacción tanto por el ENDOSATARIO como por el ENDOSANTE.</p>
                 </td>
             </tr>
             <tr>
@@ -53,7 +52,7 @@
             </tr>
             <tr>
                 <td style="text-align: center;">
-                    <h5>USUARIO TDVUELVO</h5>
+                    <h5>{{ $endosante }}</h5>
                 </td>
             </tr>
             <tr>

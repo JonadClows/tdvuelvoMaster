@@ -1,4 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+/*
 @font-face {
     font-family: "Abadi mtstd";
     src: url("../Fonts/Abadi\ mtstd.otf");
@@ -13,10 +14,13 @@
     font-family: "Abadi mtstd-light";
     src: url("../Fonts/Abadi\ mtstd-light.otf");
 }
-
+*/
 
 
 /*Cabecera ->*/
+body {
+    font-family: "Roboto";
+}
 
 .logo {
     width: auto;
@@ -31,7 +35,8 @@
     color: #878787;
     font-size: 20px;
     text-decoration: none;
-    font-family: "Abadi mtstd";
+    /* font-family: "Abadi mtstd"; */
+    font-family: "Roboto";
 }
 
 .navFont:hover {
@@ -101,18 +106,22 @@ h1#titlePrin {
     font-size: 5em;
     font-weight: bold;
     line-height: 60px;
-    font-family: "Abadi mtstd";
+    /* font-family: "Abadi mtstd"; */
+    font-family: "Roboto";
 }
 
 .boldSize {
     font-size: 22px;
     font-weight: bold;
-    font-family: "Abadi bold";
+    /* font-family: "Abadi bold"; */
+    font-family: "Roboto";
 }
 
 .sizeP {
     font-size: 2em;
-    font-family: "Abadi mtstd-light";
+    /* font-family: "Abadi mtstd-light"; */
+    font-family: "Roboto";
+    font-weight: 200;
 }
 
 a.sizeP {
@@ -537,7 +546,9 @@ div#register select.cbCiudad {
 }
 
 .fontMP {
-    font-family: "Abadi bold";
+    /* font-family: "Abadi bold"; */
+    font-family: "Roboto";
+    font-weight: bold;
     /*font-weight: bold;*/
 }
 
@@ -549,7 +560,9 @@ div#register select.cbCiudad {
 
 .numMP {
     font-size: 60px;
-    font-family: "Abadi bold";
+    /* font-family: "Abadi bold"; */
+    font-family: "Roboto";
+    font-weight: bold;
 }
 
 h5.fontMP {

@@ -1,3 +1,111 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Bold.eot?deeea838cd82ba3881569d4a59c5c59b);
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(/fonts/Roboto-Bold.eot?deeea838cd82ba3881569d4a59c5c59b) format("embedded-opentype"), url(/fonts/Roboto-Bold.woff2?e1d75b34a12a54b44723979bef6ab1a9) format("woff2"), url(/fonts/Roboto-Bold.woff?1cc2eea6bcf909b02d95281c440faa62) format("woff"), url(/fonts/Roboto-Bold.ttf?a084cc8c0f7ee99736bc38592e1eee1e) format("truetype"), url(/images/Roboto-Bold.svg?497fc6fe7d0db76edbde4fa9b5c5de36) format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Black.eot?fb461891d7cc6b640bfce76d0ec9d53e);
+  src: local("Roboto Black"), local("Roboto-Black"), url(/fonts/Roboto-Black.eot?fb461891d7cc6b640bfce76d0ec9d53e) format("embedded-opentype"), url(/fonts/Roboto-Black.woff2?23aeb55006086b4f4c7a0b798868f372) format("woff2"), url(/fonts/Roboto-Black.woff?bc725185806f4a3055e7a139c5718b95) format("woff"), url(/fonts/Roboto-Black.ttf?2227baa4b778b7ad7aeb505d3cc1dad6) format("truetype"), url(/images/Roboto-Black.svg?55d9151918335ae495e68ceae0ecf93b) format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-BlackItalic.eot?c63c9f8d83f89fcc828f3f3115f8c3f9);
+  src: local("Roboto Black Italic"), local("Roboto-BlackItalic"), url(/fonts/Roboto-BlackItalic.eot?c63c9f8d83f89fcc828f3f3115f8c3f9) format("embedded-opentype"), url(/fonts/Roboto-BlackItalic.woff2?b6287e9c64d888f095c003c7ded566ac) format("woff2"), url(/fonts/Roboto-BlackItalic.woff?b22310d436db5483cb9a822ffcf1651e) format("woff"), url(/fonts/Roboto-BlackItalic.ttf?584435a0bc26e08fd68e69d13460efe8) format("truetype"), url(/images/Roboto-BlackItalic.svg?ea741f7f0f7faba4b7401602f966b4a7) format("svg");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Italic.eot?215d8f26a8c4295646cad23d30abdc80);
+  src: local("Roboto Italic"), local("Roboto-Italic"), url(/fonts/Roboto-Italic.eot?215d8f26a8c4295646cad23d30abdc80) format("embedded-opentype"), url(/fonts/Roboto-Italic.woff2?6e75faf681f0bf7dc82f9a91bc86620a) format("woff2"), url(/fonts/Roboto-Italic.woff?0035c569edfec179f6a187c50e268559) format("woff"), url(/fonts/Roboto-Italic.ttf?27ca4faa97c74d80998c86f6210d159e) format("truetype"), url(/images/Roboto-Italic.svg?d52e46e0588754e13a19b3ab4b734ce4) format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Light.eot?7497d8344213a3ea0286a1896a1e71f2);
+  src: local("Roboto Light"), local("Roboto-Light"), url(/fonts/Roboto-Light.eot?7497d8344213a3ea0286a1896a1e71f2) format("embedded-opentype"), url(/fonts/Roboto-Light.woff2?938fb3daef80ad866fa9318937d8c0ac) format("woff2"), url(/fonts/Roboto-Light.woff?a72368a706f11472c7581ee6cd05e96c) format("woff"), url(/fonts/Roboto-Light.ttf?c6acd04d0ffcfededb9097571b4fad6c) format("truetype"), url(/images/Roboto-Light.svg?1ee7794e065781d97dc596f8a9c0a069) format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-BoldItalic.eot?977b908dcafb6f02849f317d6ac04c9a);
+  src: local("Roboto Bold Italic"), local("Roboto-BoldItalic"), url(/fonts/Roboto-BoldItalic.eot?977b908dcafb6f02849f317d6ac04c9a) format("embedded-opentype"), url(/fonts/Roboto-BoldItalic.woff2?b2c17673e6f3e62e15360db4f7414cbf) format("woff2"), url(/fonts/Roboto-BoldItalic.woff?4f406e1591f7e443ec328ef557468b04) format("woff"), url(/fonts/Roboto-BoldItalic.ttf?b24522e4d991675685393cf32b770ee4) format("truetype"), url(/images/Roboto-BoldItalic.svg?695a0828d098daf1b9d2fe9a6d2f8bd2) format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Medium.eot?cb08521e179f3f67eb16dda0d3edcbd0);
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(/fonts/Roboto-Medium.eot?cb08521e179f3f67eb16dda0d3edcbd0) format("embedded-opentype"), url(/fonts/Roboto-Medium.woff2?183afc8df55129369872d75163a711cf) format("woff2"), url(/fonts/Roboto-Medium.woff?b3a26ba2a96d52e8027ecd417e48e3d4) format("woff"), url(/fonts/Roboto-Medium.ttf?63b2cde00526bde53e3a421397c75176) format("truetype"), url(/images/Roboto-Medium.svg?24e8a82aee496091ed3ca6eeb3c2e78d) format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-LightItalic.eot?33ef028b82f8819421923d151933bb22);
+  src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/fonts/Roboto-LightItalic.eot?33ef028b82f8819421923d151933bb22) format("embedded-opentype"), url(/fonts/Roboto-LightItalic.woff2?3950c6b9fd7ab7c8a44e16715e9b5214) format("woff2"), url(/fonts/Roboto-LightItalic.woff?fc567e7aac9f3432460785bb207e8763) format("woff"), url(/fonts/Roboto-LightItalic.ttf?1503fa60488da15cfd3c411c6e023467) format("truetype"), url(/images/Roboto-LightItalic.svg?618b07b96f4c60fcacd97e699fcf9ea4) format("svg");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Thin.eot?104846cb03a607a70b132f7da58787b8);
+  src: local("Roboto Thin"), local("Roboto-Thin"), url(/fonts/Roboto-Thin.eot?104846cb03a607a70b132f7da58787b8) format("embedded-opentype"), url(/fonts/Roboto-Thin.woff2?49c20870f5cfc49b0c1e68104f5d79dc) format("woff2"), url(/fonts/Roboto-Thin.woff?a938fa0194e449f7ac25ade71ad92dde) format("woff"), url(/fonts/Roboto-Thin.ttf?1fda4f194b98c84f324cd408113a3764) format("truetype"), url(/images/Roboto-Thin.svg?111460981d1446aa586d88be182d548a) format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-MediumItalic.eot?6a342b923ef46d5b30b8297b345fa7c3);
+  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(/fonts/Roboto-MediumItalic.eot?6a342b923ef46d5b30b8297b345fa7c3) format("embedded-opentype"), url(/fonts/Roboto-MediumItalic.woff2?90593426d3d80a26273ff297007d9d7e) format("woff2"), url(/fonts/Roboto-MediumItalic.woff?2493bf39a2c8c16a3277f84a2b02e52a) format("woff"), url(/fonts/Roboto-MediumItalic.ttf?5f057361ec7cb729efdd2d11e84da920) format("truetype"), url(/images/Roboto-MediumItalic.svg?71c8b1ac930f6f59ee8e71e27ff4968b) format("svg");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Regular.eot?ba0c75efb5cb20468d26160e6dfd600f);
+  src: local("Roboto"), local("Roboto-Regular"), url(/fonts/Roboto-Regular.eot?ba0c75efb5cb20468d26160e6dfd600f) format("embedded-opentype"), url(/fonts/Roboto-Regular.woff2?d8178b0ea5f91f41ee557d72c92f1725) format("woff2"), url(/fonts/Roboto-Regular.woff?5eb21f0afb4806fcb8cd7a70eeef37f5) format("woff"), url(/fonts/Roboto-Regular.ttf?feda0ce386828f985b533ba54a788a18) format("truetype"), url(/images/Roboto-Regular.svg?474fbbaff6eb48fcdd510baef5164689) format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-ThinItalic.eot?a2e72a776acb0c3fafbee1499216e4ca);
+  src: local("Roboto Thin Italic"), local("Roboto-ThinItalic"), url(/fonts/Roboto-ThinItalic.eot?a2e72a776acb0c3fafbee1499216e4ca) format("embedded-opentype"), url(/fonts/Roboto-ThinItalic.woff2?0371193d48b4b1e455f9b320758b7256) format("woff2"), url(/fonts/Roboto-ThinItalic.woff?d77fb2aef0ab3ee50f4dbaeb147ed706) format("woff"), url(/fonts/Roboto-ThinItalic.ttf?f99ec3098d7034adea8764082db994f3) format("truetype"), url(/images/Roboto-ThinItalic.svg?a996949b7a96d0823a8831ebbfd0a68c) format("svg");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
 .modal {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -210,5 +318,20 @@ form.busy .btn-form .spinner-border {
 .dropdown-content a:last-child:hover {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.invalid-feedback {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cambiarPass .form-control:invalid {
+  padding-left: calc(1.5em + .75rem);
+}
+
+body {
+  padding-bottom: 100px;
 }
 

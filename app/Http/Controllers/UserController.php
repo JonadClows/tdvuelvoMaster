@@ -104,7 +104,7 @@ class UserController extends Controller
             'password' => Hash::make(request()->get('password')),
         ])->save();
 
-        return redirect('miperfil');
+        return redirect('miperfil')->with('passwordChanged', 'La clave ha sido cambiada satisfactoriamente');
     }
 
     public function updatePassByEmail($token) {

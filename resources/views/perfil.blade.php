@@ -4,10 +4,29 @@
 
     </div>
     <div class="container espacio">
-        <div class="row mt-5">
+        <div class="row mt-5 justify-content-md-center profileContentWrapper">
             <div class="col-lg-6 col-md-6 col-sm-6">
+                @if (\Session::has('passwordChanged'))
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="alert alert-success alert-dismissible fade show">
+                                    {!! \Session::get('passwordChanged') !!}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container ml-3 mr-3 sombra border">
+                @else
                 <div class="row">
                     <div class="container mt-5 ml-3 mr-3 sombra border">
+                @endif
                         <div class="row">
                             <div class="col-lg-12 colorC">
                                 <h5 class="fontMP">MI PERFIL</h5>
@@ -105,8 +124,23 @@
                     </div>
                 </div>
 
+                <div class="row mb-6">
+                    <div class="col-lg-12 mt-4 mb-3">
+                        <button
+                            id="btnSellNote"
+                            class="fondoBtn btn btn-outline-secondary btn-block {{ (sizeof($cuentas)==0 ? 'enable' : '') }}"
+                            data-url="{{ url('vender-nota') }}"
+                        >
+                            Vender Nota
+                        </button>
+                        @if (sizeof($cuentas)==0)
+                            <p class="text-center">No tiene cuentas registradas</p>
+                        @endif
+                    </div>
+                </div>
+
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <!-- <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="row">
                     <div class="container mt-5 mb-5 ml-3 mr-3 sombra border">
                         <div class="row">
@@ -154,7 +188,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 @endsection
