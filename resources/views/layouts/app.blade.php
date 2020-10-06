@@ -2,10 +2,30 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <!-- Primary Meta Tags -->
     <title>TDVUELVO Tu nota de crédito del SRI en dinero inmediato a un clic.</title>
+    <meta name="title" content="TDVUELVO Tu nota de crédito del SRI en dinero inmediato a un clic.">
+    <meta name="description" content="Somos una solución digital para la comercialización de tus notas de
+    crédito desmaterializadas de manera ágil y segura.">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tdvuelvo.com/">
+    <meta property="og:title" content="TDVUELVO Tu nota de crédito del SRI en dinero inmediato a un clic.">
+    <meta property="og:description" content="Somos una solución digital para la comercialización de tus notas de
+    crédito desmaterializadas de manera ágil y segura.">
+    <meta property="og:image" content="https://tdvuelvo.com/img/bannerseo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tdvuelvo.com/">
+    <meta property="twitter:title" content="TDVUELVO Tu nota de crédito del SRI en dinero inmediato a un clic.">
+    <meta property="twitter:description" content="Somos una solución digital para la comercialización de tus notas de
+    crédito desmaterializadas de manera ágil y segura.">
+    <meta property="twitter:image" content="https://tdvuelvo.com/img/bannerseo.png">
+
     <meta name="text"
-        content="Somos una solución digital para la comercialización de tus notas de crédito desmaterializadas de manera ágil y segura.">
-    <meta name="description"
         content="Somos una solución digital para la comercialización de tus notas de crédito desmaterializadas de manera ágil y segura.">
     <meta name="keywords"
         content="Devolución SRI, Notas de crédito SRI, Nota de Crédito desmaterializada, Liquidez, Vender nota, Devolución de impuestos, Pago SRI, Vender nota, Devolución efectiva">
