@@ -173,9 +173,10 @@
             <div class="row justify-content-md-center">
                 <form id="frmContacto" action="/contacto" method="POST">
                     <div id="contact" class=" input-group mb-3 ">
-                    @csrf
+                        @csrf
                         <div class="btn-group dropup">
-                            <select name="asunto" id="asunto" class="btn btn-info dropdown-toggle text-center fondoAzul" style="width: 115px;">
+                            <select name="asunto" id="asunto" class="btn btn-info dropdown-toggle text-center fondoAzul"
+                                style="width: 115px;border-top-right-radius: 0;border-bottom-right-radius: 0;">
                                 <option hidden>Asunto</option>
                                 <option value="Información empresa">Quiero saber más de la empresa.</option>
                                 <option value="Cotización personalizada">Tengo una cotización personalizada.</option>
@@ -192,7 +193,7 @@
 
                         <input type="text" name="contactEmail" id="contactEmail" class="form-control"
                             placeholder="Correo electrónico" aria-label="Recipient's username"
-                            aria-describedby="basic-addon2">
+                            aria-describedby="basic-addon2" style="border-left-width: 0px;">
 
                         <div class="input-group-append fondoAzul">
                             <button class="btn btn-outline-secondary" type="submit"

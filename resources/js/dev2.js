@@ -128,7 +128,7 @@ $('#frmVenderNota').on('submit', function(event) {
             data.valorNeto == 0 ||
             data.comision == 0
         ),
-        function() { location.href = '/miperfil'; }
+        function() { location.href = '/informacion-perfil'; }
     );
 });
 

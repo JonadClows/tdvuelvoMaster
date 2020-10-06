@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Nota;
+use App\Models\Cuenta;
+use App\Models\Banco;
+use App\Models\TipoCuenta;
 use Illuminate\Support\Facades\Mail;
 use PDF;
 
@@ -43,16 +46,28 @@ class NotaController extends Controller
         $nota->save();
 
         // Una vez guardados los datos, ahora se genera el pdf
+        
+        $cuentas = Cuenta::where('user_id','=',$user_id)->first();
+        $banco = Banco::where('id','=',$cuentas->banco_id)->first();
+        $tipoCuenta = Tipocuenta::where('id','=',$cuentas->tipocta_id)->first();
+        
+
+        //identificacionTitular - numero - banco_id - tipocta_id
 
         $data = [
-            'endosante' => trim($request->nombreTitular) . ' ' . trim($request->apellidoTitular)
+            'endosante' => trim($request->nombreTitular) . ' ' . trim($request->apellidoTitular),
+            'cedula' => $cuentas->identificacionTitular,
+            'tipoCta' => $tipoCuenta->name,
+            'numeroCta' => $cuentas->numero,
+            'bancoCta' => $banco->name
         ];
 
         $pdf = PDF::loadView('pdf.ventaNota', $data, [ 'format' => 'A4' ]);
 
         Mail::send('mail.ventaNota', $data, function($message) use ($pdf, $email){
-            $message->from(env('MAIL_FROM_ADDRESS'));
-            $message->to($email);
+            //$message->from(env('MAIL_FROM_ADDRESS'));
+            $message->from($email);
+            $message->to('info@tdvuelvo.com');
             $message->subject('TDVuelvo: Nota de Venta');
             $message->attachData($pdf->output(),'nota_de_venta.pdf');
         });
