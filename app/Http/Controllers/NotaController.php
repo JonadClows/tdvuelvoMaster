@@ -65,8 +65,8 @@ class NotaController extends Controller
         $pdf = PDF::loadView('pdf.ventaNota', $data, [ 'format' => 'A4' ]);
 
         Mail::send('mail.ventaNota', $data, function($message) use ($pdf, $email){
-            //$message->from(env('MAIL_FROM_ADDRESS'));
-            $message->from($email);
+            $message->from(env('MAIL_FROM_ADDRESS'));
+            //$message->from($email);
             $message->to('info@tdvuelvo.com');
             $message->subject('TDVuelvo: Nota de Venta');
             $message->attachData($pdf->output(),'nota_de_venta.pdf');
