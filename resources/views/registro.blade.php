@@ -32,7 +32,7 @@
                     @csrf
                     @guest
                         <input type="text" id="name" name="name" placeholder="Nombre y Apellido" maxlength="20"/>
-                        <input type="text" id="cedula" name="cedula" placeholder="C.I./ Ruc" maxlength="10" onKeyPress="return soloNumeros(event)" />
+                        <input type="text" id="cedula" name="cedula" placeholder="C.I./ Ruc" maxlength="14" onKeyPress="return soloNumeros(event)" />
                         <input type="email" id="email" name="email" placeholder="Correo electrónico" />
                         <input type="text" id="telefono" name="telefono" placeholder="Número telefónico (Opcional)" maxlength="10" onKeyPress="return soloNumeros(event)" />
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" required autocomplete="new-password">
