@@ -21,6 +21,7 @@ class UserController extends Controller
             'identification'    => request()->get('identification'),
             'email'             => request()->get('email'),
             'telefono'             => request()->get('telefono'),
+            'id_ciudad'             => request()->get('id_ciudad'),
         ])->save();
 
         return redirect('miperfil');

@@ -85,9 +85,9 @@ $('#selectProvincia').change(function() {
         dataType: 'json',
         success: function(ec) {
 
-            $('#selectCanton').empty();
-            var sel = document.getElementById('selectCanton');
-            $('#selectCanton').append('<option value="Canton" selected="selected" disabled hidden>Cantón</option>');
+            $('#id_ciudad').empty();
+            var sel = document.getElementById('id_ciudad');
+            $('#id_ciudad').append('<option value="Canton" selected="selected" disabled hidden>Cantón</option>');
 
             $.each(ec, function(key, values) {
                 var opt = document.createElement('option');
@@ -102,9 +102,9 @@ $('#selectProvincia').change(function() {
     });
 });
 
-$('#selectCanton').change(function(e) {
+/*$('#selectCanton').change(function(e) {
     $('#id_ciudad').val(e.target.value);
-});
+});*/
 
 
 function valCedula() {

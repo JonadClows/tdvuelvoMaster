@@ -68,8 +68,8 @@
                         </div>
                         <div class="col-md-6 pl-4" style="right: 65px;">
                             <div class="input-group-append">
-                                <input type="hidden" name="id_ciudad" id="id_ciudad" value="" />
-                                <select name="selectCanton" id="selectCanton"
+                                
+                                <select name="id_ciudad" id="id_ciudad"
                                     class="cbCiudad btn btn-outline-secondary">
                                     <option value="Ciudad" {{ is_null($canton) ? 'selected="selected"' : '' }} disabled hidden>Cantón</option>
                                     @if(!is_null($cantones))
