@@ -95,7 +95,7 @@
                         <br />Ingresa el valor de tu nota para disponibilizar el porcentaje que aplica y el valor
                         correspodiente.
                     </p>
-                    <label>MONTO DE NOTA</label>
+                    <label>MONTO DE NOTA</label><em style="color: #878787;"> (Valor mínimo $35)</em>
                     <input type="text" name="txtMontoNota" id="txtMontoNota" class="txtPart2"
                         onKeyPress="return soloNumeros(event)" />
                     <label>DESCUENTO %</label>

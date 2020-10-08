@@ -51,15 +51,13 @@ class NotaController extends Controller
         $banco = Banco::where('id','=',$cuentas->banco_id)->first();
         $tipoCuenta = Tipocuenta::where('id','=',$cuentas->tipocta_id)->first();
         
-
-        //identificacionTitular - numero - banco_id - tipocta_id
-
         $data = [
             'endosante' => trim($request->nombreTitular) . ' ' . trim($request->apellidoTitular),
             'cedula' => $cuentas->identificacionTitular,
             'tipoCta' => $tipoCuenta->name,
             'numeroCta' => $cuentas->numero,
-            'bancoCta' => $banco->name
+            'bancoCta' => $banco->name,
+            'correo' => $email
         ];
 
         $pdf = PDF::loadView('pdf.ventaNota', $data, [ 'format' => 'A4' ]);
