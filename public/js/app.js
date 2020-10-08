@@ -35,30 +35,43 @@ $("#txtMontoNota").bind("change paste keyup", function() {
     var descuento;
 
     if (valor > 0) {
-        if (valor >= 1 && valor <= 550) {
-            totalRecibir = valor - (valor * 0.095);
-            descuento = "9,5%";
+        if (valor <= 34) {
+            descuento = "0%";
+            $("#txtTotalRecibir").val('$0.00');
+
+        } else if (valor >= 35 && valor <= 250) {
+            totalRecibir = valor - 30;
+            descuento = "$30";
+
+        } else if (valor >= 251 && valor <= 550) {
+            totalRecibir = valor - (valor * 0.099);
+            descuento = "9,9%";
+
         } else if (valor >= 551 && valor <= 1000) {
-            totalRecibir = valor - (valor * 0.086);
-            descuento = "8,6%";
+            totalRecibir = valor - (valor * 0.087);
+            descuento = "8,7%";
 
         } else if (valor >= 1001 && valor <= 3000) {
             totalRecibir = valor - (valor * 0.081);
             descuento = "8,1%";
 
         } else if (valor >= 3001 && valor <= 5000) {
-            totalRecibir = valor - (valor * 0.071);
-            descuento = "7,1%";
+            totalRecibir = valor - (valor * 0.078);
+            descuento = "7,8%";
 
         } else if (valor >= 5001 && valor <= 8000) {
-            totalRecibir = valor - (valor * 0.059);
-            descuento = "5,9%";
+            totalRecibir = valor - (valor * 0.0589);
+            descuento = "5,89%";
 
         } else if (valor >= 8001 && valor <= 10000) {
-            totalRecibir = valor - (valor * 0.046);
-            descuento = "4,6%";
+            totalRecibir = valor - (valor * 0.045);
+            descuento = "4,5%";
 
-        } else if (valor > 10000) {
+        } else if (valor >= 10001 && valor <= 12000) {
+            totalRecibir = valor - (valor * 0.0399);
+            descuento = "3,99%";
+
+        } else if (valor > 12000) {
             $("#txtTotalRecibir").val('-');
             descuento = "-";
             totalRecibir = "-";
@@ -140,30 +153,43 @@ $("#montoVN").bind("change paste keyup", function() {
     var descuento;
 
     if (valor > 0) {
-        if (valor >= 1 && valor <= 550) {
-            totalRecibir = valor - (valor * 0.095);
-            descuento = "9,5%";
+        if (valor <= 34) {
+            descuento = "0%";
+            $("#txtTotalRecibir").val('$0.00');
+
+        } else if (valor >= 35 && valor <= 250) {
+            totalRecibir = valor - 30;
+            descuento = "$30";
+
+        } else if (valor >= 251 && valor <= 550) {
+            totalRecibir = valor - (valor * 0.099);
+            descuento = "9,9%";
+
         } else if (valor >= 551 && valor <= 1000) {
-            totalRecibir = valor - (valor * 0.086);
-            descuento = "8,6%";
+            totalRecibir = valor - (valor * 0.087);
+            descuento = "8,7%";
 
         } else if (valor >= 1001 && valor <= 3000) {
             totalRecibir = valor - (valor * 0.081);
             descuento = "8,1%";
 
         } else if (valor >= 3001 && valor <= 5000) {
-            totalRecibir = valor - (valor * 0.071);
-            descuento = "7,1%";
+            totalRecibir = valor - (valor * 0.078);
+            descuento = "7,8%";
 
         } else if (valor >= 5001 && valor <= 8000) {
-            totalRecibir = valor - (valor * 0.059);
-            descuento = "5,9%";
+            totalRecibir = valor - (valor * 0.0589);
+            descuento = "5,89%";
 
         } else if (valor >= 8001 && valor <= 10000) {
-            totalRecibir = valor - (valor * 0.046);
-            descuento = "4,6%";
+            totalRecibir = valor - (valor * 0.045);
+            descuento = "4,5%";
 
-        } else if (valor > 10000) {
+        } else if (valor >= 10001 && valor <= 12000) {
+            totalRecibir = valor - (valor * 0.0399);
+            descuento = "3,99%";
+
+        } else if (valor > 12000) {
             $("#txtTotalRecibir").val('-');
             descuento = "-";
             totalRecibir = "-";
