@@ -57,7 +57,9 @@ class NotaController extends Controller
             'tipoCta' => $tipoCuenta->name,
             'numeroCta' => $cuentas->numero,
             'bancoCta' => $banco->name,
-            'correo' => $email
+            'correo' => $email,
+            'monto' => $request->monto,
+            'valor_neto' => $request->valorNeto
         ];
 
         $pdf = PDF::loadView('pdf.ventaNota', $data, [ 'format' => 'A4' ]);
